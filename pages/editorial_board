@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Editorial Board</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            :root {
+            --soft-black: #1a1a1a;
+            --dark-gray: #303030;
+            --mid-gray: #575757;
+            --light-gray: #a9a9a9;
+            --main-maroon: #7a0019;
+            --contrast-maroon: #5b0013;
+            --accent-blue: #89bdc1;
+            --accent-gold: #ffcc33;
+            }
+            body {
+            background: #fff;
+            color: var(--soft-black);
+            margin: 0;
+            }
+            .container {
+            max-width: 1200px;
+            padding: 24px 18px 40px 18px;
+            background: transparent;
+            }
+            h1 {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 700;
+            color: var(--main-maroon);
+            margin-bottom: auto;
+            letter-spacing: 0.01em;
+            }
+            h2 {
+            text-align: center;
+            color: var(--main-maroon);
+            font-weight: 700;
+            font-size: 1.34rem;
+            margin: 24px 0 16px 0;
+            letter-spacing: 0.01em;
+            }
+            .misq-divider {
+            border: none;
+            border-top: 1px solid var(--light-gray);
+            margin: 22px auto;
+            width: 95%;
+            }
+            .section {
+            margin-bottom: 36px;
+            }
+            .board-details {
+            text-align: center;
+            color: var(--soft-black);
+            font-size: 1.12rem;
+            }
+            .office-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            justify-items: center;
+            margin: 10px 0 30px 0;
+            }
+            .office-member {
+            text-align: center;
+            min-width: 170px;
+            font-size: 1.01rem;
+            color: var(--soft-black);
+            }
+            .office-label {
+            font-weight: 600;
+            color: var(--soft-black);
+            }
+            .editors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            }
+            .editor-card {
+            background: #f8f8fc;
+            border-radius: 11px;
+            box-shadow: 0 2px 8px rgba(122, 0, 25, 0.06);
+            padding: 16px 19px 10px 19px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            margin-bottom: 6px;
+            border: 1.2px solid var(--light-gray);
+            }
+            .editor-card:hover {
+            box-shadow: 0 4px 18px rgba(122, 0, 25, 0.12);
+            border-color: var(--accent-blue);
+            }
+            .collapsible-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            padding: 0;
+            font: inherit;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--main-maroon);
+            text-align: left;
+            outline: none;
+            letter-spacing: 0.01em;
+            transition: color 0.2s;
+            text-decoration: none;
+            }
+            .collapsible-btn[aria-expanded="true"] {
+            color: var(--accent-blue);
+            }
+            .collapsible-btn:focus,
+            .collapsible-btn:active {
+            text-decoration: none;
+            }
+            .arrow {
+            margin-right: 11px;
+            transition: transform 0.2s, color 0.2s;
+            font-size: 1.2rem;
+            color: var(--main-maroon);
+            }
+            .collapsible-btn[aria-expanded="true"] .arrow {
+            transform: rotate(90deg);
+            color: var(--accent-blue);
+            }
+            .editor-meta {
+            margin: 2px 0 9px 0;
+            font-size: 0.97rem;
+            color: var(--dark-gray);
+            font-style: italic;
+            }
+            .editor-institution {
+            color: var(--dark-gray);
+            margin-bottom: 7px;
+            font-size: 1.05rem;
+            font-weight: 400;
+            }
+            .editor-email a {
+            color: var(--mid-gray);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.97rem;
+            word-break: break-all;
+            transition: color 0.2s;
+            }
+            .editor-email a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            }
+            .collapsible-content {
+            display: none;
+            margin-top: 13px;
+            font-size: 1rem;
+            color: var(--soft-black);
+            padding-left: 23px;
+            border-left: 2.5px solid var(--accent-blue);
+            background: #f7fafd;
+            }
+            .collapsible-content>* {
+            margin-bottom: 0.4em;
+            }
+            .collapsible-content>*:last-child {
+            margin-bottom: 0;
+            }
+            .collapsible-content a {
+            color: #1a0dab;
+            text-decoration: underline;
+            }
+            .collapsible-content a:hover,
+            .collapsible-content a:focus {
+            color: #003366;
+            }
+            .collapsible-content.active {
+            display: block;
+            animation: fadeIn 0.17s;
+            }
+            @keyframes fadeIn {
+            from {
+            opacity: 0;
+            transform: translateY(-7px);
+            }
+            to {
+            opacity: 1;
+            transform: translateY(0);
+            }
+            }
+            @media (max-width: 700px) {
+            .container {
+            padding: 7px;
+            }
+            .editors-grid {
+            gap: 11px;
+            }
+            .editor-card {
+            padding: 10px;
+            }
+            .office-row {
+            grid-template-columns: 1fr;
+            }
+            .collapsible-btn {
+            font-size: 1.08rem;
+            }
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T19:00:14.288Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:57:04.254Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:47:35.642Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:43:25.794Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:36:16.696Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:31:23.402Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.collapsible-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    let content = this.parentElement.querySelector('.collapsible-content');
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('active');
+                    this.setAttribute('aria-expanded', !expanded);
+                });
+            });
+        });
+    </script>
+        <div class="container">
+        <h1>Editorial Board</h1>
+        <div class="section">
+        <h2>Editor-in-Chief</h2>
+        <div class="board-details">
+        <div><strong><span style="color: #1a1a1a;">Susan Brown</span></strong></div>
+        <div>January 2024 – December 2026</div>
+        <div>University of Arizona</div>
+        <div><a href="mailto:misq-eic@umn.edu">misq-eic@umn.edu</a></div>
+        </div>
+        </div>
+        <hr class="misq-divider" />
+        <div class="section">
+        <h2>Editorial Office</h2>
+        <div class="office-row">
+        <div class="office-member">
+        <span class="office-label">Alok Gupta</span><br />
+        Publisher
+        </div>
+        <div class="office-member">
+        <span class="office-label">Kaylee Brosius</span><br />
+        Managing Editor
+        </div>
+        <div class="office-member">
+        <span class="office-label">Todd Balazovic</span><br />
+        Communications and Content Strategist
+        </div>
+        <div class="office-member">
+        <span class="office-label">Monica Birth, Ph.D.</span><br />
+        Copyediting and Production Editor
+        </div>
+        </div>
+        </div>
+        <hr class="misq-divider" />
+        <div class="section">
+        <h2>Policy Committee</h2>
+        <div class="office-row">
+        <div class="office-member">
+        <span class="office-label">Gautam Ray</span><br />
+        University of Minnesota<br />
+        <em>Committee Chair</em>
+        </div>
+        <div class="office-member">
+        <span class="office-label">Alok Gupta</span><br />
+        University of Minnesota<br />
+        <em>Publisher</em>
+        </div>
+        <div class="office-member">
+        <span class="office-label">Michel Avital</span><br />
+        Copenhagen Business School<br />
+        <em>AIS Representative – VP of Publications</em>
+        </div>
+        <div class="office-member">
+        <span class="office-label">Natalia Levina</span><br />
+        New York University<br />
+        <em>AIS Representative – At-large</em>
+        </div>
+        <div class="office-member">
+        <span class="office-label">Susan Brown</span><br />
+        University of Arizona<br />
+        <em>MISQ Editor-in-Chief</em>
+        </div>
+        </div>
+        </div>
+        <hr class="misq-divider" />
+        <div class="section">
+        <h2>Senior Editors</h2>
+        <div class="editors-grid">
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Nicholas Berente
+        </button>
+        <div class="editor-meta">June 2022 - Dec 2025</div>
+        <div class="editor-institution">University of Notre Dame</div>
+        <div class="editor-email"><a href="mailto:nberente@nd.edu">nberente@nd.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital innovation, managing AI, organizational transformation, technology development and implementation, open-source software</div>
+        <div><strong>Methods Expertise:</strong> qualitative, computationally intensive research, mixed methods, meta-analyses, conceptual or review work</div>
+        <a href="https://mendoza.nd.edu/mendoza-directory/profile/nicholas-berente/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Michelle Carter
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">University of Manchester (DEI)</div>
+        <div class="editor-email"><a href="mailto:michelle.carter@manchester.ac.uk">michelle.carter@manchester.ac.uk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT identities, trust in digital interactions, human-centered challenges in IS</div>
+        <div><strong>Methods Expertise:</strong> surveys, online experiments, regression, interviews, case studies</div>
+        <a href="https://research.manchester.ac.uk/en/persons/michelle-carter">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Michael Chau
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">University of Hong Kong</div>
+        <div class="editor-email"><a href="mailto:mchau@business.hku.hk">mchau@business.hku.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> machine learning models, predictive analytics models, language models, financial technologies, social media, electronic commerce, information security</div>
+        <div><strong>Methods Expertise:</strong> computational design science</div>
+        <a href="http://www.business.hku.hk/~mchau/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> John D’Arcy
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2027</div>
+        <div class="editor-institution">University of Delaware</div>
+        <div class="editor-email"><a href="mailto:jdarcy@udel.edu">jdarcy@udel.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> cybersecurity management, information privacy, “dark side” facets of IT</div>
+        <div><strong>Methods Expertise:</strong> quantitative (e.g., experiments, surveys), qualitative, mixed methods</div>
+        <a href="https://jpdarcy.github.io/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Xiao Fang
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">University of Delaware</div>
+        <div class="editor-email"><a href="mailto:xfang@udel.edu">xfang@udel.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, machine learning, financial technology, healthcare analytics, social network analytics, information security and privacy</div>
+        <div><strong>Methods Expertise:</strong> design science, computational design science, analytical modeling</div>
+        <a href="https://www.dalab.info/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Miguel Godinho de Matos
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">Católica Lisbon School of Business and Economics</div>
+        <div class="editor-email"><a href="mailto:miguel.godinhomatos@gmail.com">miguel.godinhomatos@gmail.com</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> social networks, digitalization, data regulation, consumer behavior, firm performance</div>
+        <div><strong>Methods Expertise:</strong> field experiments, advanced experimental designs, econometric methods, instrumental variable approaches</div>
+        <a href="https://www.clsbe.lisboa.ucp.pt/pt-pt/pessoa/miguel-godinho-matos">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Peter Gray
+        </button>
+        <div class="editor-meta">July 2021 - Dec 2026</div>
+        <div class="editor-institution">University of Virginia</div>
+        <div class="editor-email"><a href="mailto:phg4c@comm.virginia.edu">phg4c@comm.virginia.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online communities, social networks, knowledge use in organizations</div>
+        <div><strong>Methods Expertise:</strong> quantitative empirical research, survey research, experiments, statistical analysis of secondary data</div>
+        <a href="https://www.commerce.virginia.edu/faculty/phg4c">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Brad Greenwood
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">George Mason University</div>
+        <div class="editor-email"><a href="mailto:bgreenwo@gmu.edu">bgreenwo@gmu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital platforms, sharing economy, digital health economics, innovation, entrepreneurship, inequality</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis of observational data, natural experiments, statistical identification methods</div>
+        <a href="http://www.fixedeffects.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Jungpil  Hahn
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-institution">National University of Singapore</div>
+        <div class="editor-email"><a href="mailto:jungpil@nus.edu.sg">jungpil@nus.edu.sg</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT innovation, knowledge work, open-source software development, project management, digital transformation</div>
+        <div><strong>Methods Expertise:</strong> laboratory experiments, field experiments, archival data analysis, econometrics, design science, computational modeling, simulation</div>
+        <a href="https://www.comp.nus.edu.sg/disa/bio/jungpil/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Shuk Ying (Susanna) Ho
+        </button>
+        <div class="editor-meta">Jan 2021 - Dec 2026</div>
+        <div class="editor-institution">Australian National University</div>
+        <div class="editor-email"><a href="mailto:susanna.ho@anu.edu.au">susanna.ho@anu.edu.au</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> user-centric technologies, interactions with IT artifacts, online communities, virtual teams, gamification, e-learning</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, field experiments, surveys, quantitative analysis, qualitative research, mixed methods</div>
+        <a href="https://researchers.anu.edu.au/researchers/ho-sy">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Carol Hsu
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">University of Sydney</div>
+        <div class="editor-email"><a href="mailto:carol.hsu@sydney.edu.au">carol.hsu@sydney.edu.au</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> cybersecurity management, digital transformation</div>
+        <div><strong>Methods Expertise:</strong> qualitative, mixed-methods, action research</div>
+        <a href="https://www.sydney.edu.au/business/about/our-people/academic-staff/carol-hsu.html">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Zhenhui (Jack) Jiang
+        </button>
+        <div class="editor-meta">June 2022 - Dec 2027</div>
+        <div class="editor-institution">University of Hong Kong</div>
+        <div class="editor-email"><a href="mailto:jiangz@hku.hk">jiangz@hku.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online consumer behavior, social media, virtual reality, user collaboration, human-computer interaction, information privacy</div>
+        <div><strong>Methods Expertise:</strong> laboratory experiments, field experiments, surveys, secondary data analysis</div>
+        <a href="https://www.hkubs.hku.hk/people/zhenhui-jack-jiang/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Julia Kotlarsky
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">University of Auckland</div>
+        <div class="editor-email"><a href="mailto:j.kotlarsky@auckland.ac.nz">j.kotlarsky@auckland.ac.nz</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital transformation, AI, technology sourcing, digital sustainability, digital innovation, social media, crisis contexts</div>
+        <div><strong>Methods Expertise:</strong> qualitative research, conceptual work, mixed methods with qualitative emphasis</div>
+        <a href="https://profiles.auckland.ac.nz/j-kotlarsky">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Xinxin Li
+        </button>
+        <div class="editor-meta">Jan 2020 - Dec 2026</div>
+        <div class="editor-institution">University of Connecticut</div>
+        <div class="editor-email"><a href="mailto:xinxin.li@uconn.edu">xinxin.li@uconn.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> economics of emerging technologies, digital platforms, online word of mouth, social media, IS-marketing interface, pricing and competitive strategies</div>
+        <div><strong>Methods Expertise:</strong> game theoretic modeling, econometric analysis of observational data and field experimental data</div>
+        <a href="https://www.business.uconn.edu/person/xinxin-li/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Likoebe Maruping
+        </button>
+        <div class="editor-meta">Jan 2020 - Dec 2025</div>
+        <div class="editor-institution">Georgia State University</div>
+        <div class="editor-email"><a href="mailto:lmaruping@gmail.com">lmaruping@gmail.com</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digitally-enabled collective innovation, digital transformation, digital entrepreneurship</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis, social network analysis, experimental design, surveys, qualitative case studies, mixed methods</div>
+        <a href="https://lmaruping.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Balaji Padmanabhan
+        </button>
+        <div class="editor-meta">Jan 2021 - Dec 2026</div>
+        <div class="editor-institution">University of Maryland</div>
+        <div class="editor-email"><a href="mailto:bpadmana@umd.edu">bpadmana@umd.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> data mining, analytics, machine learning, AI, algorithmic design, platform optimization</div>
+        <div><strong>Methods Expertise:</strong> computational methods, algorithm design, machine learning, design science</div>
+        <a href="https://www.rhsmith.umd.edu/directory/balaji-padmanabhan">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Jan Recker
+        </button>
+        <div class="editor-meta">Jan 2021 - Dec 2026</div>
+        <div class="editor-institution">University of Hamburg</div>
+        <div class="editor-email"><a href="mailto:jan.christof.recker@uni-hamburg.de">jan.christof.recker@uni-hamburg.de</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, digital innovation, digital transformation, digital entrepreneurship, digital sustainability, systems development</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, quantitative behavioral methods, mixed methods, design methods, simulation</div>
+        <a href="http://www.janrecker.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Maytal Saar-Tsechansky
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2027</div>
+        <div class="editor-institution">University of Texas, Austin</div>
+        <div class="editor-email"><a href="mailto:ms2753@eid.utexas.edu">ms2753@eid.utexas.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> machine learning, artificial intelligence, human-AI collaboration</div>
+        <div><strong>Methods Expertise:</strong> machine learning methods, AI model development, computational data-driven methods</div>
+        <a href="http://maytals.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Sumit Sarkar
+        </button>
+        <div class="editor-meta">July 2021 - Dec 2026</div>
+        <div class="editor-institution">University of Texas, Dallas</div>
+        <div class="editor-email"><a href="mailto:sumit@utdallas.edu">sumit@utdallas.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> data management, knowledge management, data privacy, crowdsourcing, personalization and recommendation systems, user-generated content</div>
+        <div><strong>Methods Expertise:</strong> analytical modeling, operations research, probabilistic machine learning</div>
+        <a href="https://jindal.utdallas.edu/faculty/sumit-sarkar">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Stefan Seidel
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">University of Cologne</div>
+        <div class="editor-email"><a href="mailto:stefan.seidel@wiso.uni-koeln.de">stefan.seidel@wiso.uni-koeln.de</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> AI, organizational change, innovation, sustainability transformation, regulation of emerging technologies</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, computational-qualitative combinations, design science, conceptual and review work</div>
+        <a href="https://ciis.uni-koeln.de/en/team/professors/prof-dr-stefan-seidel">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Mari-Klara Stein
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">Tallinn University of Technology (TalTech)</div>
+        <div class="editor-email"><a href="mailto:mari-klara.stein@taltech.ee">mari-klara.stein@taltech.ee</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital transformation and the future(s) of work, emerging forms of digital work, implications of work digitalization, algorithmic management, datafication in the workplace</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, field studies, ethnographic techniques, case studies, mixed methods</div>
+        <a href="https://www.etis.ee/CV/Mari-Klara_Stein/eng/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Heshan Sun
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">University of Oklahoma</div>
+        <div class="editor-email"><a href="mailto:sunh@ou.edu">sunh@ou.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-technology interaction, online word-of-mouth, technology adoption, consumer decision-making</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, natural experiments, surveys, multi-method approaches</div>
+        <a href="https://www.ou.edu/price/mis/people/heshan-sun">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Anjana Susarla
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">Michigan State University</div>
+        <div class="editor-email"><a href="mailto:asusarla@broad.msu.edu">asusarla@broad.msu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, social media, IT sourcing, responsible AI, network science</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis of observational data, causal inference, social network analysis, machine learning</div>
+        <a href="https://broad.msu.edu/profile/asusarla/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Jason Thatcher
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2027</div>
+        <div class="editor-institution">University of Colorado, Boulder</div>
+        <div class="editor-email"><a href="mailto:Jason.Thatcher@colorado.edu">Jason.Thatcher@colorado.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT workforce, digital strategy, social media, cybersecurity, technology diffusion, interdisciplinary research</div>
+        <div><strong>Methods Expertise:</strong> online experiments, survey-based research, mixed method research, problematization, agnostic to paradigms</div>
+        <a href="https://www.colorado.edu/business/leeds-directory/faculty/jason-bennett-thatcher">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Ofir Turel
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-institution">University of Melbourne</div>
+        <div class="editor-email"><a href="mailto:oturel@unimelb.edu.au">oturel@unimelb.edu.au</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> behavioral IS research, social media, video games, artificial intelligence, dark side of technology use, board of directors, cybersecurity &amp; privacy</div>
+        <div><strong>Methods Expertise:</strong> quantitative, surveys, experiments, NeuroIS</div>
+        <a href="https://oturel1.wixsite.com/ofirturel">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Anthony (Tony) Vance
+        </button>
+        <div class="editor-meta">May 2021 - Dec 2026</div>
+        <div class="editor-institution">Virginia Tech</div>
+        <div class="editor-email"><a href="mailto:anthony@vance.name">anthony@vance.name</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> cybersecurity, NeuroIS, user interface design, security policy compliance</div>
+        <div><strong>Methods Expertise:</strong> experiments, surveys, NeuroIS methods, qualitative research, mixed methods</div>
+        <a href="https://anthonyvance.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Emmanuelle  Vaast
+        </button>
+        <div class="editor-meta">July 2023 - June 2026</div>
+        <div class="editor-institution">McGill University</div>
+        <div class="editor-email"><a href="mailto:emmanuelle.vaast@mcgill.ca">emmanuelle.vaast@mcgill.ca</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> social media, organizational change, processes perspectives</div>
+        <div><strong>Methods Expertise:</strong> qualitative research, case studies, ethnography, discourse analysis, computational-qualitative combinations</div>
+        <a href="https://www.mcgill.ca/desautels/emmanuelle-vaast">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Han Zhang
+        </button>
+        <div class="editor-meta">Jan 2021 - Dec 2026</div>
+        <div class="editor-institution">Hong Kong Baptist University &amp; Georgia Institute of Technology</div>
+        <div class="editor-email"><a href="mailto:han.zhang@scheller.gatech.edu">han.zhang@scheller.gatech.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online trust, social media, online communities, consumer satisfaction, human-computer interaction</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, field experiments, econometric analysis of archival data</div>
+        <a href="https://www.scheller.gatech.edu/directory/faculty/zhang/index.html">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Xiaoquan (Michael) Zhang
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-institution">Chinese University of Hong Kong</div>
+        <div class="editor-email"><a href="mailto:zhang@cuhk.edu.hk">zhang@cuhk.edu.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> FinTech and AI in finance, social media analytics, online platforms and digital markets, information economics, e-Marketing, behavioral finance, digital transformation</div>
+        <div><strong>Methods Expertise:</strong> field experiments, causal inference, machine learning and AI, natural experiments, Big Data analytics, game theory and mechanism design, econometric modeling</div>
+        <a href="http://mikezhang.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Eric Zheng
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2026</div>
+        <div class="editor-institution">University of Texas, Dallas</div>
+        <div class="editor-email"><a href="mailto:ericz@utdallas.edu">ericz@utdallas.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> fintech, blockchain, digital assets, artificial intelligence</div>
+        <div><strong>Methods Expertise:</strong> econometrics, machine learning, causal inference, design science</div>
+        <a href="https://jindal.utdallas.edu/faculty/eric-zheng">Personal website</a>
+        </div>
+        </div>
+        </div>
+        <hr class="misq-divider" />
+        <div class="section">
+        <h2>Associate Editors</h2>
+        <div class="editors-grid">
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Margunn Aanestad
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">University of Oslo</div>
+        <div class="editor-email"><a href="mailto:margunn@ifi.uio.no">margunn@ifi.uio.no</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital infrastructures, digital innovation, healthcare applications, AI adoption, sustainability transitions</div>
+        <div><strong>Methods Expertise:</strong> inter-disciplinary research, ethnography, case studies</div>
+        <a href="https://www.mn.uio.no/ifi/english/people/aca/margunn/index.html">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Hilal Atasoy
+        </button>
+        <div class="editor-meta">July 2023 - Dec 2026</div>
+        <div class="editor-institution">Rutgers University</div>
+        <div class="editor-email"><a href="mailto:hilal.atasoy@rutgers.edu">hilal.atasoy@rutgers.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> healthcare IT, digital health applications, labor markets and IT</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis of secondary data, observational studies, natural experiments</div>
+        <a href="https://sites.google.com/view/hilalatasoy">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Abayomi Baiyere
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Queen's University</div>
+        <div class="editor-email"><a href="mailto:a.baiyere@queensu.ca">a.baiyere@queensu.ca</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital transformation, digital innovation, organizational change, societal impacts of digitalization</div>
+        <div><strong>Methods Expertise:</strong> design science, ethnography, mixed methods</div>
+        <a href="https://smith.queensu.ca/faculty_and_research/faculty_list/abayomi-baiyere.php">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Liwei  Chen
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">University of Cincinnati</div>
+        <div class="editor-email"><a href="mailto:liwei.chen@uc.edu">liwei.chen@uc.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT empowerment, health IT, human-AI collaboration, algorithmic decision-making, intelligence augmentation</div>
+        <div><strong>Methods Expertise:</strong> quantitative empirical research with primary data (e.g., behavioral methods)</div>
+        <a href="https://business.uc.edu/faculty-research/obais/faculty/liwei-chen.html">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Rui Chen
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Iowa State University</div>
+        <div class="editor-email"><a href="mailto:ruichen@iastate.edu">ruichen@iastate.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> cyber-security, information privacy, crisis management, artificial intelligence, user interactions with IT</div>
+        <div><strong>Methods Expertise:</strong> behavioral, design science, qualitative</div>
+        <a href="https://www.ivybusiness.iastate.edu/directory/ruichen/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Katherine Feng
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Hong Kong Polytechnic University</div>
+        <div class="editor-email"><a href="mailto:katherine.feng@polyu.edu.hk">katherine.feng@polyu.edu.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> social media, online reviews, generative AI, human-AI interaction, digital platforms, user engagement, technology adoption and use</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis, field and laboratory experiments, surveys, applied machine learning, mixed methods</div>
+        <a href="https://www.polyu.edu.hk/mm/people/academic-staff/dr-y-katherine-feng/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Yong Ge
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">University of Arizona</div>
+        <div class="editor-email"><a href="mailto:yongge@arizona.edu">yongge@arizona.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> personalized recommendations, social networking, healthcare, digital platform and economy, information network, labor market and education</div>
+        <div><strong>Methods Expertise:</strong> machine learning, deep learning, large language model (LLM), generative AI, reinforcement learning, data mining</div>
+        <a href="https://eller.arizona.edu/people/yong-ge">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Tomer Geva
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">Tel Aviv University</div>
+        <div class="editor-email"><a href="mailto:tgeva@tau.ac.il">tgeva@tau.ac.il</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> organizational environments, business data science, algorithm development</div>
+        <div><strong>Methods Expertise:</strong> machine learning, AI, predictive modeling, NLP methods</div>
+        <a href="http://www.tomergeva.net/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Cheng Suang  Heng
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">National University of Singapore</div>
+        <div class="editor-email"><a href="mailto:hengcs@comp.nus.edu.sg">hengcs@comp.nus.edu.sg</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> organizational use of IT, digital platforms, sharing economy, digital innovation, social computing</div>
+        <div><strong>Methods Expertise:</strong> experiments, surveys, archival data analysis, case studies, multi-methods</div>
+        <a href="https://www.comp.nus.edu.sg/disa/bio/hengcs/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Yi-Jen (Ian) Ho
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Tulane University</div>
+        <div class="editor-email"><a href="mailto:ian.ho@tulane.edu">ian.ho@tulane.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, digital platforms, gamification, and location-based services</div>
+        <div><strong>Methods Expertise:</strong> causal inference, econometrics, machine learning, randomized field experiment, and structural modeling</div>
+        <a href="https://freeman.tulane.edu/faculty-research/management-science/yi-jen-ian-ho">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Weiyin Hong
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">Hong Kong University of Science and Technology</div>
+        <div class="editor-email"><a href="mailto:whong@ust.hk">whong@ust.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-computer interaction, AI and humans, FinTech, information privacy, website design</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, surveys, field experiments, eye-tracking studies, mixed methods</div>
+        <a href="https://isom.hkust.edu.hk/faculty-and-staff/directory/whong">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Tabitha L. James
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Virginia Tech</div>
+        <div class="editor-email"><a href="mailto:tajames@vt.edu">tajames@vt.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> AI, machine learning, deep learning, health IT, online communities, social media</div>
+        <div><strong>Methods Expertise:</strong> surveys, experiments, structural equation modeling, qualitative analysis, mixed methods, algorithm development</div>
+        <a href="https://bit.vt.edu/faculty/directory/james.html">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Allen C. Johnston
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">University of Alabama</div>
+        <div class="editor-email"><a href="mailto:ajohnston@cba.ua.edu">ajohnston@cba.ua.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> behavioral cybersecurity, privacy, human-computer interaction, IT adoption, IT security</div>
+        <div><strong>Methods Expertise:</strong> quantitative, survey, experimental design, mixed methods</div>
+        <a href="https://culverhouse.ua.edu/news/directory/allen-johnston/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Hee-Woong Kim
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">Yonsei University</div>
+        <div class="editor-email"><a href="mailto:kimhw@yonsei.ac.kr">kimhw@yonsei.ac.kr</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> AI in business, AI model development and applications, IS infusion, digital business models, dark side of IS use (cyber bullying, hate speech, deep fake)</div>
+        <div><strong>Methods Expertise:</strong> machine learning, design science, behavioral method, multi-methods</div>
+        <a href="https://dslab.yonsei.ac.kr/cv">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Seung Hyun Kim
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Yonsei University</div>
+        <div class="editor-email"><a href="mailto:seungkim@yonsei.ac.kr">seungkim@yonsei.ac.kr</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> information security and privacy, digital marketing, healthcare IT, impact of cyber and digital regulations, economics of AI</div>
+        <div><strong>Methods Expertise:</strong> econometrics, field experiment, survey</div>
+        <a href="https://ysb.yonsei.ac.kr/faculty.asp?mid=n02&amp;uid=107">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Brent Kitchens
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">University of Virginia</div>
+        <div class="editor-email"><a href="mailto:bmk2a@virginia.edu">bmk2a@virginia.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online platforms, information propagation, artificial intelligence, societal outcomes, public health</div>
+        <div><strong>Methods Expertise:</strong> computational methods, design science, predictive modeling, empirical methods using secondary data</div>
+        <a href="https://www.commerce.virginia.edu/faculty/bmk2a">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Nishtha Langer
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">Rensselaer Polytechnic Institute</div>
+        <div class="editor-email"><a href="mailto:nishthal@alumni.cmu.edu">nishthal@alumni.cmu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT labor, IT capital, value of social media platforms</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis, archival quantitative data, field experiments, lab experiments, mixed methods</div>
+        <a href="https://faculty.rpi.edu/nishtha-langer">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Jingjing Li
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">University of Virginia</div>
+        <div class="editor-email"><a href="mailto:jl9rf@virginia.edu">jl9rf@virginia.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, big data analytics, human-AI collaboration, healthcare, marketing, public policy</div>
+        <div><strong>Methods Expertise:</strong> natural language processing, text mining, machine learning, econometrics, lab and field experiments, geo-analytics, mixed methods</div>
+        <a href="https://sites.google.com/view/jingjingli">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Zhijie Lin
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">Tsinghua University</div>
+        <div class="editor-email"><a href="mailto:linzhj@sem.tsinghua.edu.cn">linzhj@sem.tsinghua.edu.cn</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> economics of information systems, digital platforms, digital transformation, human-AI interaction</div>
+        <div><strong>Methods Expertise:</strong> econometrics, field/natural/quasi experiments, mixed methods</div>
+        <a href="https://www.sem.tsinghua.edu.cn/en/info/1219/5728.htm">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Aron Lindberg
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Stevens Institute of Technology</div>
+        <div class="editor-email"><a href="mailto:aron.lindberg@stevens.edu">aron.lindberg@stevens.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital innovation, digital transformation, online communities, the dark side of digital phenomena, organizational routines</div>
+        <div><strong>Methods Expertise:</strong> qualitative research, computational theory, mixed methods, design science, conceptual work</div>
+        <a href="https://www.stevens.edu/profile/alindber">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Alexander Maedche
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">Karlsruhe Institute of Technology</div>
+        <div class="editor-email"><a href="mailto:alexander.maedche@kit.edu">alexander.maedche@kit.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> user-adaptive systems, AI-based process digitalization, business intelligence &amp; analytics systems, human-centered design of IS</div>
+        <div><strong>Methods Expertise:</strong> design science, experimental, mixed-methods, NeuroIS</div>
+        <a href="https://h-lab.win.kit.edu/team_maedche.php">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Sabine Matook
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">University of Queensland</div>
+        <div class="editor-email"><a href="mailto:s.matook@business.uq.edu.au">s.matook@business.uq.edu.au</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> information systems development, IT artifact, social media and human behaviors</div>
+        <div><strong>Methods Expertise:</strong> qualitative, case studies, design science, quantitative, surveys, experiments</div>
+        <a href="https://about.uq.edu.au/experts/1654">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> YoungKi Park
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">George Washington University</div>
+        <div class="editor-email"><a href="mailto:ykpark@gwu.edu">ykpark@gwu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> IT organizational capabilities, IT outsourcing, enterprise architecture, IT governance</div>
+        <div><strong>Methods Expertise:</strong> quantitative, qualitative, qualitative comparative analysis (QCA), surveys, structural equation modeling, interviews, case studies</div>
+        <a href="https://business.gwu.edu/youngki-park">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Srinivasan Raghunathan
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">University of Texas, Dallas</div>
+        <div class="editor-email"><a href="mailto:sraghu@utdallas.edu">sraghu@utdallas.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> sharing economy, economics of digital platforms, smart contracts, user-generated content</div>
+        <div><strong>Methods Expertise:</strong> game-theoretic modeling, decision-theoretic modeling, analytical modeling</div>
+        <a href="https://jindal.utdallas.edu/faculty/srinivasan-raghunathan/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Rene Riedl
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">University of Applied Sciences Upper Austria &amp; University of Linz</div>
+        <div class="editor-email"><a href="mailto:rene.riedl@fh-steyr.at">rene.riedl@fh-steyr.at</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digitization and digital transformation, trust in a digital world, technostress, human-computer interaction</div>
+        <div><strong>Methods Expertise:</strong> NeuroIS lab studies, NeuroIS field studies, experimental</div>
+        <a href="https://fh-ooe.at/studienangebot/digital-business-management-master/personen-kontakt">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Nachiketa (Nachi) Sahoo
+        </button>
+        <div class="editor-meta">Jan 2021 - Dec 2026</div>
+        <div class="editor-institution">Boston University</div>
+        <div class="editor-email"><a href="mailto:nachi@bu.edu">nachi@bu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> machine learning, user preferences, decision-making processes, recommender systems, online content, user engagement</div>
+        <div><strong>Methods Expertise:</strong> statistical modeling, econometrics, causal inference, archival data analysis</div>
+        <a href="http://people.bu.edu/nachi/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Sagar  Samtani
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Indiana University</div>
+        <div class="editor-email"><a href="mailto:ssamtani@iu.edu">ssamtani@iu.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> cybersecurity, health analytics, business intelligence, AI-enabled analytics</div>
+        <div><strong>Methods Expertise:</strong> text analytics, network science, time series analysis, deep learning, machine learning</div>
+        <a href="https://kelley.iu.edu/faculty-research/faculty-directory/profile.html?id=SSAMTANI">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Maha  Shaikh
+        </button>
+        <div class="editor-meta">Mar 2021 - Dec 2026</div>
+        <div class="editor-institution">ESADE Business School</div>
+        <div class="editor-email"><a href="mailto:maha.shaikh@icloud.com">maha.shaikh@icloud.com</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital innovation, algorithmic work, open source and online communities, theorising the digital artefact</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, archival studies, ethnography, Grounded Theory</div>
+        <a href="https://www.esade.edu/faculty/maha.shaikh">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Vilma Todri
+        </button>
+        <div class="editor-meta">July 2023 - Dec 2025</div>
+        <div class="editor-institution">Emory University</div>
+        <div class="editor-email"><a href="mailto:vilma.todri@emory.edu">vilma.todri@emory.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> disruptive digital technologies, online consumer behavior, firm-consumer interactions</div>
+        <div><strong>Methods Expertise:</strong> econometric analysis, empirical methods</div>
+        <a href="https://goizueta.emory.edu/faculty/profiles/vilma-todri">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Ping Wang
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">University of Maryland, College Park</div>
+        <div class="editor-email"><a href="mailto:pwang@umd.edu">pwang@umd.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, blockchain, quantum computing, digital innovation, platforms &amp; ecosystems, resilience &amp; sustainability, technology popularity, trends, &amp; adoption</div>
+        <div><strong>Methods Expertise:</strong> case study, survey, structural equation modeling, social network analysis, panel data analysis, discourse analysis, text mining</div>
+        <a href="https://drpingwang.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Markus Weinmann
+        </button>
+        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-institution">University of Cologne</div>
+        <div class="editor-email"><a href="mailto:weinmann@wiso.uni-koeln.de">weinmann@wiso.uni-koeln.de</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human behavior in digital environments, behavioral interventions, decision-making, behavioral economics</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, online experiments, field experiments, trace-data studies, Bayesian methods, machine learning</div>
+        <a href="https://wiso.uni-koeln.de/de/forschung/find-an-expert/expertinnen/prof-dr-markus-weinmann">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Wen Wen
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">University of Texas, Austin</div>
+        <div class="editor-email"><a href="mailto:Wen.Wen@mccombs.utexas.edu">Wen.Wen@mccombs.utexas.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> future of work. AI, digital platforms, digital innovation, economics of IS</div>
+        <div><strong>Methods Expertise:</strong> quantitative empirical research, econometrics method, multi-method research</div>
+        <a href="https://www.mccombs.utexas.edu/faculty-and-research/faculty-directory/profile/?username=ww6268">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Xiao Xiao
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Copenhagen Business School</div>
+        <div class="editor-email"><a href="mailto:xx.digi@cbs.dk">xx.digi@cbs.dk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital entrepreneurship, digital innovation, digital transformation, digital platform, sports digitalization, indigenous theory, contextualized theorization</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, mixed-methods, literature review, survey</div>
+        <a href="https://www.cbs.dk/en/research/departments-and-centres/department-of-digitalization/staff/xxdigi">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Lizhen Xu
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Georgia Tech</div>
+        <div class="editor-email"><a href="mailto:lizhen.xu@scheller.gatech.edu">lizhen.xu@scheller.gatech.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online and mobile advertising, consumer analytics, economics of AI, consumer privacy, platform economics</div>
+        <div><strong>Methods Expertise:</strong> analytical modeling, game-theoretic modeling, empirical research, probability models, Bayesian models, machine learning</div>
+        <a href="http://www.scheller.gatech.edu/xu">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Cheng Yi
+        </button>
+        <div class="editor-meta">Jan 2022 - Dec 2025</div>
+        <div class="editor-institution">Tsinghua University</div>
+        <div class="editor-email"><a href="mailto:yich@sem.tsinghua.edu.cn">yich@sem.tsinghua.edu.cn</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-AI interaction, extended reality, digital transformation, e-commerce, digital learning</div>
+        <div><strong>Methods Expertise:</strong> experiments</div>
+        <a href="https://www.sem.tsinghua.edu.cn/en/info/1246/7153.htm">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Dezhi (Denny)  Yin
+        </button>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
+        <div class="editor-institution">University of South Florida</div>
+        <div class="editor-email"><a href="mailto:dezhiyin@usf.edu">dezhiyin@usf.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> emotions in online environments, online consumer behavior, user-generated content, AI-generated content, human-computer interaction and collaboration</div>
+        <div><strong>Methods Expertise:</strong> lab experiments, field experiments, econometric analysis</div>
+        <a href="https://dennyyin.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Yingjie  Zheng
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Peking University</div>
+        <div class="editor-email"><a href="mailto:yingjiezhang@gsm.pku.edu.cn">yingjiezhang@gsm.pku.edu.cn</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-AI interaction, economic impacts of new technologies</div>
+        <div><strong>Methods Expertise:</strong> econometrics, structural modeling, machine learning, field experiment</div>
+        <a href="https://sites.google.com/view/yingjiezhang/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Kunpeng Zheng
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">University of Maryland</div>
+        <div class="editor-email"><a href="mailto:kpzhang@umd.edu">kpzhang@umd.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> AI in business, machine learning methods</div>
+        <div><strong>Methods Expertise:</strong> large language models, representation learning, predictive modeling</div>
+        <a href="https://kpzhang.github.io/">Personal website</a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>
