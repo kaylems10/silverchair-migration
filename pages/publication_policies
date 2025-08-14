@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MISQ Policies for Publication</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="MIS Quarterly policies governing submissions, review, research integrity, and publishing rights." />
+        <style>
+            :root { --gap: 1.5rem; --toc-w: 260px; }
+            /* Wrapper padding avoids top-gap 'border' and scopes all styles */
+            .policies {
+            line-height: 1.35;
+            color: black;
+            }
+            /* Typography */
+            .policies h1 { margin-top: 0; color: #7a0019; }
+            .policies h2 { margin-top: 1.2em; }
+            .policies h3 { margin-top: 1.1em; margin-bottom: .15em; }
+            .policies h3 + p { margin-top: 0; }
+            .policies h4 { margin-top: .9em; font-style: italic; }
+            .policies p  { margin: .6em 0 .9em; }
+            .policies a  { color: #1a1a1a; text-decoration: underline; }
+            /* Lists */
+            .policies ul {
+            list-style: none;
+            padding-left: 3em;
+            margin: .4em 0 .9em;
+            }
+            .policies li { position: relative; }
+            /* Layout + TOC */
+            .policies .layout {
+            display: grid;
+            grid-template-columns: minmax(220px, var(--toc-w)) 1fr;
+            gap: var(--gap);
+            align-items: start;
+            }
+            .policies nav.toc {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow: auto;
+            padding: 1rem;
+            background: #f6f6f6;
+            border-radius: .5rem;
+            }
+            .policies nav.toc strong { display: block; margin-bottom: .4rem; }
+            .policies nav.toc ul { padding-left: 1rem; margin: .25rem 0 0; }
+            .policies nav.toc a { text-decoration: none; }
+            .policies nav.toc a:hover { text-decoration: underline; }
+            /* Utilities */
+            .policies .sr-only { position: absolute; left: -9999px; }
+            .policies section + section { margin-top: 1.2em; }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:25:34.488Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized">
+        <div class="policies">
+        <a class="sr-only" href="#content">Skip to content</a>
+        <h1 id="top">MISQ Policies for Publication</h1>
+        <p>To maintain the highest standards of research quality, all parties involved in the publication of the <em>Management Information Systems Quarterly</em> (<em>MIS Quarterly</em>) must comply with the following policies and guidelines, which include, but are not limited to:</p>
+        <div class="layout">
+        <nav class="toc" aria-label="Table of contents">
+        <strong>Contents</strong>
+        <ul>
+            <li><a href="#s1">1. Journal Overview</a></li>
+            <li><a href="#s2">2. Editorial Process</a></li>
+            <li><a href="#s3">3. Submission Policies</a></li>
+            <li><a href="#s4">4. Research Integrity</a></li>
+            <li><a href="#s5">5. Publishing Rights</a></li>
+        </ul>
+        </nav>
+        <main id="content" role="main">
+        <!-- 1 -->
+        <section id="s1">
+        <h2>1. Journal Overview</h2>
+        <h3>1.1. Description</h3>
+        <p><em>Management Information Systems Quarterly</em> (<em>MIS Quarterly</em>) is a peer-reviewed academic journal that publishes scholarly research on information systems.</p>
+        <h3>1.2. Editorial Objective</h3>
+        <p>The editorial objective of the <em>MIS Quarterly</em> is the enhancement and communication of knowledge concerning the development of IT-based services, the management of IT resources, and the use, impact, and economics of IT with managerial, organizational, and societal implications. Professional issues affecting the IS field as a whole are also in the purview of the journal.</p>
+        <h3>1.3. Publisher</h3>
+        <p><em>MIS Quarterly</em> is published by the Regents of the University of Minnesota.</p>
+        <h3>1.4. Publication Schedule</h3>
+        <p><em>MIS Quarterly</em> operates on a quarterly publication schedule, with issues released in March, June, September, and December.</p>
+        </section>
+        <!-- 2 -->
+        <section id="s2">
+        <h2>2. Editorial Process</h2>
+        <h3>2.1. Review Model</h3>
+        <p><em>MIS Quarterly</em> uses a double‑anonymous review process in which authors and reviewers do not know each other’s identities. Author and reviewer identities are known to the editor‑in‑chief, senior editor, associate editor, and editorial staff. Authors must ensure that submitted manuscripts contain no identifying information.</p>
+        </section>
+        <!-- 3 -->
+        <section id="s3">
+        <h2>3. Submission Policies</h2>
+        <h3>3.1. Eligibility and Authorship Criteria</h3>
+        <p>Peer review depends on the participation of the scholarly community. By submitting to <em>MIS Quarterly</em>, authors agree to review up to three papers for the journal within a year, if invited.</p>
+        <h3>3.2. Submission Process</h3>
+        <p>All manuscripts must be submitted via Manuscript Central to undergo formal review.</p>
+        <h3>3.3. Formatting Requirements</h3>
+        <p>All submissions must comply with the journal’s formatting guidelines before being reviewed.</p>
+        <h3>3.4. Fees</h3>
+        <p>There is no fee to submit a manuscript for review.</p>
+        <h3>3.5. Authorship Changes</h3>
+        <p>The author(s) should confirm the correct author list and order before initial submission, as changes during review are discouraged. Any authorship change must be approved by all authors and documented accordingly. The author list will be locked in the submission system after the initial submission, so all changes must be made by the managing editor. <em>MIS Quarterly</em> will not mediate authorship disputes. Unresolved disputes may delay publication.</p>
+        <h3>3.6. Resubmission of Rejected Papers</h3>
+        <p><em>MIS Quarterly</em> does not provide a reject‑and‑resubmit decision for submissions.</p>
+        <p>In rare instances, a senior editor may indicate in a decision letter that authors can submit a significantly revised version of a rejected paper as a new submission. These resubmissions must differ substantially from the original in ways that go beyond a typical major revision.</p>
+        <p>Resubmissions will be treated as new submissions and must include the following information:</p>
+        <ul>
+            <li>3.6.1. Declaration of the paper, including the manuscript number, title, and the senior editor who handled the previous version.</li>
+            <li>3.6.2. Nominations for editors from the current editorial board, as well as reviewer nominations.</li>
+            <li>3.6.3. A 2–3 page summary detailing the major changes.</li>
+            <li>3.6.4. A copy of the rejected paper.</li>
+        </ul>
+        <p>The assigned senior editor will evaluate whether the resubmission has changed sufficiently to warrant reconsideration as a new submission.</p>
+        </section>
+        <!-- 4 -->
+        <section id="s4">
+        <h2>4. Research Integrity</h2>
+        <h3>4.1. Conflicts of Interest</h3>
+        <p>There should be no conflicts of interest between any member of the author team and any member of the review team. The review team should not be tied to the author(s) in any way that would affect their ability to render a fair and unbiased review of the manuscript. When nominating members for the review team, the author(s) must ensure they do not nominate individuals with whom they have any conflicts.</p>
+        <p>All personal, professional, or financial conflicts of interest must be disclosed to the editor‑in‑chief at the time of submission or upon their discovery. The editor‑in‑chief will take appropriate steps to reassign responsibilities as needed to ensure a fair review process.</p>
+        <h3>4.2. Duplicate Submission</h3>
+        <p>Any work that has already been published or is under review in another journal cannot be submitted to <em>MIS Quarterly</em>.</p>
+        <h3 id="s4-5">4.3. Redundant Publication / Provenance Disclosure</h3>
+        <p>At the time of submission, authors are required to disclose any related work. This includes previously published work, work currently under consideration elsewhere, and conference proceedings.</p>
+        <p>If related work exists, authors are required to explain how the current submission offers a distinct contribution beyond the other version(s). Additionally, authors must indicate the copyright status of any conference version and specify whether the rights holder permits republication.</p>
+        <p>Failure to comply with these requirements may result in withdrawal of the manuscript.</p>
+        <h3>4.4. Compliance with AIS Code of Research Conduct</h3>
+        <p>All submissions to <em>MIS Quarterly</em> must comply with the <a href="https://aisnet.org/page/AdmBullCResearchCond" rel="noopener">AIS Code of Research Conduct.</a></p>
+        <h3>4.5. Data Rights and Provenance</h3>
+        <p>Authors must certify that they have the legal right to use all data and publish the research results presented in the manuscript. This includes data from public sources, which must be used in compliance with the data owner’s terms, such as website fair use policies. Before submitting, authors must obtain any required corporate or other legal permissions.</p>
+        <p>Manuscripts that violate this policy will be withdrawn, including after acceptance. For guidance on fair use, authors are encouraged to review <a href="https://fairuse.stanford.edu/overview/fair-use/four-factors/" rel="noopener">Measuring Fair Use: The Four Factors.</a></p>
+        <h3>4.6. Research Transparency</h3>
+        <p><em>MIS Quarterly</em> requires authors to declare the transparency of their research during the submission process. See also <a href="#s4-5">Section 4.5 (Data Rights and Provenance)</a> for related requirements.</p>
+        <h4>4.6.1. Requirements</h4>
+        <p>Transparency materials should clearly document the study’s design, data, and analysis in a form appropriate to the research genre. Materials must be accurate, complete, and authentic.</p>
+        <p>Final acceptance of the manuscript is contingent upon the review of these materials by both the senior editor and the transparency editor. Any limitations, such as licensing or proprietary constraints, must be disclosed.</p>
+        <h4>4.6.2. Data Availability</h4>
+        <p>Where applicable, authors must provide transparency materials and ensure they are publicly available in an external repository. If others wish to use transparency materials, they are required to cite the published article.</p>
+        </section>
+        <!-- 5 -->
+        <section id="s5">
+        <h2>5. Publishing Rights</h2>
+        <h3>5.1. Copyright Statement</h3>
+        <p>Each issue of <em>MIS Quarterly</em> contains the following copyright notice: Copyright © <span id="year"></span> by the Regents of the University of Minnesota.</p>
+        <h3>5.2. Assignment of Copyright</h3>
+        <p>By the act of submission, the author(s) agree that if their work is accepted for publication, they will assign the article's copyright to the Regents of the University of Minnesota. All accepted papers require a signed copyright assignment prior to publication. Only one author’s signature is required, representing all coauthors, unless the editorial office is informed otherwise. Upon acceptance, authors must remove all versions of the manuscript from all personal and institutional websites and cannot distribute the article online in any format.</p>
+        <p>If the work was created under an arrangement where another party (e.g., an employer, client, or contracting entity) holds copyright, the author(s) must confirm that the rights holder is willing to transfer copyright before submitting the manuscript. If the article contains material copyrighted by another source, the author(s) are responsible for obtaining written permission for its use and for paying any associated fees.</p>
+        <h3>5.3. Copyright Rights held by Authors</h3>
+        <p>Under the terms of the copyright assignment, the author(s) reserve the following rights:</p>
+        <ul>
+            <li>5.3.1. The right to use, free of charge, all or part of this article in future work of their own (such as books, lectures, reviews) giving reference to the original place of publication and copyright holding.</li>
+            <li>5.3.2. The right to reproduce the article for their own purpose provided the copies are not offered for sale or distributed online in any format.</li>
+            <li>5.3.3. Patent rights, trademark rights, or rights to any process, product, or procedure described in this paper.</li>
+            <li>5.3.4. The right to post the <em>MIS Quarterly</em> typeset copy of the paper to personal websites and/or institutional repositories five (5) years after the version of record publication date. The <em>MIS Quarterly</em> typeset PDF must not be posted to any other websites.</li>
+        </ul>
+        <h3>5.4. Permissions</h3>
+        <p>To reuse, reprint, or republish any version of content from <em>MIS Quarterly</em>, you must obtain permission from the publisher. This applies to pre‑print, published, and archived articles.</p>
+        <p>Requests must be submitted through the <a href="https://marketplace.copyright.com/rs-ui-web/mp/ccom-redirect?issn=0276-7783" rel="noopener">Copyright Clearance Center.</a> Once submitted, the publisher will determine fees based on the intended use.</p>
+        <p>For information regarding the rights of authors to reprint their work, review the <em>MIS Quarterly</em> Copyright Policy.</p>
+        <p><a href="#top">Back to top</a></p>
+        </section>
+        </main>
+        </div>
+        </div>
+        <script>
+    (function() {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+    </body>
+</html>
