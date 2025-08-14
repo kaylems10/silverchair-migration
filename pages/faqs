@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MISQ Frequently Asked Questions</title>
+        <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body {
+            line-height:1.6;
+            color:#1A1A1A;
+            background:#f8f9fa;
+            min-height:100vh;
+            }
+            .container {
+            width:100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(1rem, 2vw, 2rem);
+            }
+            /* Title now H1, maroon, with (FAQs) */
+            .page-title {
+            color:#7A0019;
+            font-size:2rem;
+            margin-bottom:1rem;
+            font-weight:700;
+            text-align:center;
+            }
+            .intro-text {
+            background: rgba(137,189,193,.1);
+            border-left: 4px solid #89BDC1;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 4px 4px 0;
+            text-align: center;
+            }
+            .faq-category { margin-bottom: 2rem; }
+            .category-title {
+            color:#7A0019;
+            font-size:1.3rem;
+            margin-bottom:1rem;
+            font-weight:600;
+            border-bottom:2px solid #89BDC1;
+            padding-bottom:.5rem;
+            }
+            .faq-item {
+            border:1px solid #dee2e6;
+            border-radius:6px;
+            margin-bottom:1rem;
+            overflow:hidden;
+            transition: box-shadow .2s ease;
+            background:#fff;
+            }
+            .faq-item:hover {
+            box-shadow:0 2px 8px rgba(122,0,25,0.08);
+            }
+            .faq-question {
+            background:#f3f5f7;
+            padding:1rem 1.25rem;
+            cursor:pointer;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-weight:600;
+            font: inherit;
+            color:#1A1A1A;
+            border:none;
+            width:100%;
+            text-align:left;
+            }
+            .faq-question:hover {
+            background: rgba(137,189,193,.1);
+            color:#7A0019;
+            }
+            .faq-question.active {
+            background:#7A0019;
+            color:#fff;
+            }
+            .faq-icon {
+            font-size:1.1rem;
+            transition: transform .2s ease;
+            color:#89BDC1;
+            }
+            .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+            color:#FFCC33;
+            }
+            .faq-answer {
+            padding:0 1.25rem;
+            max-height:0;
+            overflow:hidden;
+            transition: all .25s ease;
+            background:#fff;
+            }
+            .faq-answer.active {
+            padding:1.25rem;
+            max-height:500px;
+            }
+            .faq-answer p {
+            margin-bottom:1rem;
+            line-height:1.7;
+            }
+            .faq-answer ul {
+            margin:1rem 0 1rem 1.5rem;
+            }
+            .faq-answer li {
+            margin-bottom:.5rem;
+            }
+            .contact-link {
+            color:#7A0019;
+            text-decoration:none;
+            font-weight:600;
+            }
+            .contact-link:hover {
+            text-decoration:underline;
+            }
+            .info {
+            background: rgba(137,189,193,.1);
+            border-left:4px solid #89BDC1;
+            padding:1rem;
+            margin:1rem 0;
+            border-radius:0 4px 4px 0;
+            }
+            .info strong { color:#7A0019; }
+            .search-box {
+            width:100%;
+            padding:1rem;
+            border:2px solid #dee2e6;
+            border-radius:6px;
+            font-size:1rem;
+            margin-bottom:1.5rem;
+            transition: border-color .2s ease;
+            background:#fff;
+            }
+            .search-box:focus {
+            outline:none;
+            border-color:#89BDC1;
+            }
+            .no-results {
+            text-align:center;
+            color:#6c757d;
+            font-style:italic;
+            padding:2rem;
+            display:none;
+            }
+            @media (max-width: 768px) {
+            .page-title { font-size:1.6rem; }
+            .faq-question { padding:1rem; font-size:.95rem; }
+            .faq-answer.active { padding:1rem; }
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:24:20.971Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T16:29:01.318Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T16:22:29.770Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div class="container">
+        <h1 class="page-title">Frequently Asked Questions (FAQs)</h1>
+        <div class="intro-text">
+        <p>Find answers to the most common questions about <em>MIS Quarterly</em>. Use the search box below or browse by category.</p>
+        </div>
+        <input type="text" class="search-box" id="searchBox" placeholder="Search FAQs..." onkeyup="searchFAQs()" />
+        <!-- Example FAQ category -->
+        <div class="faq-category">
+        <h3 class="category-title">Access &amp; Subscriptions</h3>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>Do you offer physical copies of <em>MIS Quarterly</em>?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>No. MISQ discontinued print editions in 2019 and is now fully digital.</p>
+        </div>
+        </div>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>How can my institution or library subscribe to MISQ?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>MISQ does not directly manage institutional subscriptions. All institutional subscriptions are handled by EBSCO Information Services. For more information, please contact <a href="mailto:misqsubs@umn.edu" class="contact-link">misqsubs@umn.edu</a>.</p>
+        </div>
+        </div>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>I purchased articles on the original MISQ website. How can I continue to access them?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>For access to previous purchases, email <a href="mailto:misqsubs@umn.edu" class="contact-link">misqsubs@umn.edu</a> and include the titles or products you're seeking.</p>
+        </div>
+        </div>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>Can I log in with my account from the old MISQ website?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>No. You will need to create a new user account for this website.</p>
+        </div>
+        </div>
+        </div>
+        <!-- Publication & Timeline -->
+        <div class="faq-category">
+        <h3 class="category-title">Publication &amp; Timeline</h3>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>When will the First Look or Article in Advance version of my manuscript be published?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>We aim to publish First Look versions within one month of acceptance. Our copyeditor will reach out to the authors to coordinate final revisions before the Article in Advance version is published.</p>
+        <div class="info">
+        <strong>Things to consider:</strong>
+        <ul>
+            <li>Articles are published in order of acceptance date.</li>
+            <li>Delays may occur near quarterly issue deadlines.</li>
+            <li>For time-sensitive requests (e.g., tenure reviews), contact <a href="mailto:kbrosius@umn.edu" class="contact-link">kbrosius@umn.edu</a> and <a href="mailto:birth011@umn.edu" class="contact-link">birth011@umn.edu</a>.</li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Copyright & Permissions -->
+        <div class="faq-category">
+        <h3 class="category-title">Copyright &amp; Permissions</h3>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>Can I reuse a figure from an MISQ article in my own work?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>Yes, but you need to request permission through the Copyright Clearance Center. This keeps a record in our system and provides you with digital access to the license.</p>
+        </div>
+        </div>
+        </div>
+        <!-- Editorial & Review Process -->
+        <div class="faq-category">
+        <h3 class="category-title">Editorial &amp; Review Process</h3>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>How can I become a reviewer for <em>MIS Quarterly</em>?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>You can attend a reviewer development workshop, typically held in January and promoted on our website and social media. You may also contact 1–2 associate editors in your field to express your interest in reviewing.</p>
+        </div>
+        </div>
+        </div>
+        <!-- Advertising & Services -->
+        <div class="faq-category">
+        <h3 class="category-title">Advertising &amp; Services</h3>
+        <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>How can I advertise on the MISQ website?</span>
+        <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+        <p>Online ad space is available for $200 per 3-month period. To inquire, contact <a href="mailto:kbrosius@umn.edu" class="contact-link">kbrosius@umn.edu</a>.</p>
+        </div>
+        </div>
+        </div>
+        <div class="no-results" id="noResults">
+        <p>No FAQs found matching your search. Try different keywords or browse the categories above.</p>
+        </div>
+        </div>
+        <script>
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const isActive = element.classList.contains('active');
+
+      document.querySelectorAll('.faq-question.active').forEach(item => {
+        item.classList.remove('active');
+        item.nextElementSibling.classList.remove('active');
+      });
+
+      if (!isActive) {
+        element.classList.add('active');
+        answer.classList.add('active');
+      }
+    }
+
+    function searchFAQs() {
+      const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+      const categories = document.querySelectorAll('.faq-category');
+      let hasResults = false;
+
+      categories.forEach(category => {
+        let categoryHasResults = false;
+        category.querySelectorAll('.faq-item').forEach(item => {
+          const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+          const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+          if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.style.display = 'block';
+            categoryHasResults = true;
+            hasResults = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        category.style.display = categoryHasResults ? 'block' : 'none';
+      });
+
+      document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.faq-item')) {
+        document.querySelectorAll('.faq-question.active').forEach(item => {
+          item.classList.remove('active');
+          item.nextElementSibling.classList.remove('active');
+        });
+      }
+    });
+  </script>
+    </body>
+</html>
