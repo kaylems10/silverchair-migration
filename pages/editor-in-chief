@@ -158,7 +158,33 @@
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
         <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
-        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:17:51.446Z</div>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T20:20:57.221Z</div>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
@@ -182,8 +208,8 @@
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
         <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
     </head>
-    <body class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized">
-        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:03:31.447Z</div>
+    <body class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized vsc-domain-sitemaster-misq-umn-edu">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:37:45.341Z</div>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
@@ -206,7 +232,168 @@
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
         <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
-        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:01:57.446Z</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:36:44.824Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:32:23.805Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:12:22.682Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:06:50.105Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:05:55.389Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:01:32.146Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:02:23.179Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-14T18:01:07.654Z</div>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
         <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
@@ -599,7 +786,9 @@
         <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
         <h1><strong>Editors-in-Chief</strong></h1>
         <section class="editor-in-chief-section">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/SueBrown.jpg" class="editor-chief-photo" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Susan Brown'}">
+        <img src="/ImageLibrary/Editors-in-Chief/SueBrown.jpg" alt="Susan Brown, Editor-in-Chief" class="editor-chief-photo" />
+        </a>
         <div class="editor-chief-bio">
         <span class="editor-chip">Current Editor‑in‑Chief</span>
         <h2>Susan A. Brown</h2>
@@ -615,70 +804,99 @@
         <div class="editors-wrap">
         <div class="editors-grid">
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/AndrewBurton-Jones.jpg" />
-        <div class="editor-name">Andrew Burton-Jones</div>
-        <div class="editor-years">2021 - 2023</div>
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
+        <img src="/ImageLibrary/Editors-in-Chief/AndrewBurton-Jones.jpg" alt="Andrew Burton-Jones, Editor-in-Chief 2021-2023 /&gt;
+        &lt;/a&gt;
+        &lt;div class=" />Andrew Burton-Jones</a></div>
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
+        </a>
+        <div class="editor-years"><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">2021 - 2023</a></div>
         </div>
-        <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/ArunRai.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
+        </a>
+        <div class="editor-card"><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
+        </a><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Arun Rai'}">
+        <img src="/ImageLibrary/Editors-in-Chief/ArunRai.jpg" alt="Arun Rai, Editor-in-Chief 2016–2020" />
+        </a>
         <div class="editor-name">Arun Rai</div>
         <div class="editor-years">2016 - 2020</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/PauloGoes.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Paulo B. Goes'}">
+        <img src="/ImageLibrary/Editors-in-Chief/PauloGoes.jpg" alt="Paulo B. Goes, Editor-in-Chief 2013–2015" />
+        </a>
         <div class="editor-name">Paulo B. Goes</div>
         <div class="editor-years">2013 - 2015</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/DetmarStraub.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Detmar W. Straub'}">
+        <img src="/ImageLibrary/Editors-in-Chief/DetmarStraub.jpg" alt="Detmar W. Straub, Editor-in-Chief 2008–2012" />
+        </a>
         <div class="editor-name">Detmar W. Straub</div>
         <div class="editor-years">2008 - 2012</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/CarolSaunders.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Carol Saunders'}">
+        <img src="/ImageLibrary/Editors-in-Chief/CarolSaunders.jpg" alt="Carol Saunders, Editor-in-Chief 2005–2007" />
+        </a>
         <div class="editor-name">Carol Saunders</div>
         <div class="editor-years">2005 - 2007</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/RonWeber.png" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Ron Weber'}">
+        <img src="/ImageLibrary/Editors-in-Chief/RonWeber.png" alt="Ron Weber, Editor-in-Chief 2001–2004" />
+        </a>
         <div class="editor-name">Ron Weber</div>
         <div class="editor-years">2001 - 2004</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/AllenLee.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Allen S. Lee'}">
+        <img src="/ImageLibrary/Editors-in-Chief/AllenLee.jpg" alt="Allen S. Lee, Editor-in-Chief 1999–2001" />
+        </a>
         <div class="editor-name">Allen S. Lee</div>
         <div class="editor-years">1999 - 2001</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/BobZmud.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Robert Zmud'}">
+        <img src="/ImageLibrary/Editors-in-Chief/BobZmud.jpg" alt="Robert Zmud, Editor-in-Chief 1995–1998" />
+        </a>
         <div class="editor-name">Robert Zmud</div>
         <div class="editor-years">1995 - 1998</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/BlakeIves.jpeg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Blake Ives'}">
+        <img src="/ImageLibrary/Editors-in-Chief/BlakeIves.jpeg" alt="Blake Ives, Editor-in-Chief 1992–1994" />
+        </a>
         <div class="editor-name">Blake Ives</div>
         <div class="editor-years">1992 - 1994</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/blankpfp.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'James C. Emery'}">
+        <img src="/ImageLibrary/Editors-in-Chief/blankpfp.jpg" alt="James C. Emery, Editor-in-Chief 1988–1991" />
+        </a>
         <div class="editor-name">James C. Emery</div>
         <div class="editor-years">1988 - 1991</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/WarrenMcFarlan.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'F. Warren McFarlan'}">
+        <img src="/ImageLibrary/Editors-in-Chief/WarrenMcFarlan.jpg" alt="F. Warren McFarlan, Editor-in-Chief 1986–1988" />
+        </a>
         <div class="editor-name">F. Warren McFarlan</div>
         <div class="editor-years">1986 - 1988</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/WilliamKing.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'William R. King'}">
+        <img src="/ImageLibrary/Editors-in-Chief/WilliamKing.jpg" alt="William R. King, Editor-in-Chief 1983–1985" />
+        </a>
         <div class="editor-name">William R. King</div>
         <div class="editor-years">1983 - 1985</div>
         </div>
         <div class="editor-card">
-        <img alt="" src="/ImageLibrary/Editors-in-Chief/GaryDickson.jpg" />
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Gary W. Dickson'}">
+        <img src="/ImageLibrary/Editors-in-Chief/GaryDickson.jpg" alt="Gary W. Dickson, Editor-in-Chief 1977–1982" />
+        </a>
         <div class="editor-name">Gary W. Dickson</div>
         <div class="editor-years">1977 - 1982</div>
-        </div>
         </div>
         </div>
     </body>
