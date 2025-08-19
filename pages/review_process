@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Review Process – MIS Quarterly</title>
+        <meta name="description" content="How peer review works at MIS Quarterly: our commitments, double-anonymous review, roles, the review flow, and typical outcomes." />
+        <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6; color:#1A1A1A; background:#ffffff;
+            }
+            .container { max-width:1200px; margin:0 auto; padding:40px 20px; }
+            .header { text-align:center; margin-bottom:50px; }
+            .header h1 { font-size:2.5rem; font-weight:700; color:#7A0019; margin-bottom:12px; }
+            .intro-text { max-width:800px; margin:0 auto; color:#575757; font-size:1.1rem; text-align:center; }
+            .layout { display:grid; grid-template-columns:280px 1fr; gap:40px; align-items:start; }
+            .toc {
+            position:sticky; top:20px; background:#f8f9fa; border:1px solid #e9ecef; border-radius:15px;
+            padding:25px; box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            }
+            .toc-title { font-weight:700; color:#303030; margin-bottom:16px; font-size:1.1rem; }
+            .toc ul { list-style:none; }
+            .toc li { margin-bottom:8px; }
+            .toc a {
+            color:#89BDC1; text-decoration:none; font-weight:500; transition:all .3s ease;
+            display:block; padding:5px 0; border-bottom:1px solid transparent;
+            }
+            .toc a:hover { color:#303030; border-bottom-color:#FFCC33; }
+            .content {
+            background:#fff; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            border:1px solid #e9ecef; padding:40px;
+            }
+            .section { margin-bottom:50px; }
+            .section:last-child { margin-bottom:0; }
+            .section h2 {
+            color:#303030; font-size:1.8rem; font-weight:600; margin-bottom:22px;
+            border-bottom:2px solid #89BDC1; padding-bottom:10px;
+            }
+            .section h3 { color:#303030; font-size:1.3rem; font-weight:600; margin:25px 0 12px; }
+            .section p { margin-bottom:14px; line-height:1.7; color:#1A1A1A; }
+            .section ul { margin:14px 0 18px 24px; list-style:none; }
+            .section li { position:relative; margin-bottom:8px; padding-left:18px; }
+            .section li::before { content:"•"; color:#89BDC1; position:absolute; left:0; font-weight:bold; }
+            .callout {
+            background:#f8f9fa; border:1px solid #e9ecef; border-radius:12px;
+            padding:16px 18px; margin:14px 0 6px;
+            }
+            .callout strong { color:#303030; }
+            .figure {
+            margin:14px 0 0;
+            border:1px dashed #e0e0e0; border-radius:12px; padding:18px; text-align:center;
+            color:#575757; background:#fcfcfc;
+            }
+            .figure img { max-width:100%; height:auto; border-radius:8px; display:block; margin:0 auto 8px; }
+            .figure figcaption { font-size:.95rem; color:#575757; }
+            .back-to-top { text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid #e9ecef; }
+            .back-to-top a {
+            color:#89BDC1; text-decoration:none; font-weight:600; padding:10px 20px;
+            border:1px solid #89BDC1; border-radius:25px; transition:all .3s ease;
+            }
+            .back-to-top a:hover { background:#89BDC1; color:#fff; }
+            .sr-only { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+            em { font-style:italic; color:#303030; }
+            /* Responsive */
+            @media (max-width: 900px) {
+            .layout { grid-template-columns:1fr; gap:30px; }
+            .toc { position:static; order:2; }
+            .content { order:1; padding:30px 25px; }
+            .header h1 { font-size:2rem; }
+            .section h2 { font-size:1.5rem; }
+            .container { padding:20px 15px; }
+            }
+            @media (max-width: 480px) {
+            .header h1 { font-size:1.8rem; }
+            .content { padding:25px 20px; }
+            .toc { padding:20px; }
+            }
+            /* Lightbox */
+            #imgModal {
+            padding: 0;
+            border: none;
+            max-width: 95vw;
+            max-height: 95vh;
+            background: transparent;
+            }
+            #imgModal::backdrop { background: rgba(0,0,0,.55); }
+            #imgModalImg {
+            display: block;
+            max-width: 95vw;
+            max-height: 85vh;
+            margin: 0 auto;
+            border-radius: 10px;
+            background: #fff;
+            }
+            #imgModal .caption {
+            margin: 10px auto 0;
+            max-width: 90vw;
+            color: #f0f0f0;
+            text-align: center;
+            font-size: .95rem;
+            }
+            .figure img.zoomable { cursor: zoom-in; }
+            #imgModal .close-btn{
+            position: absolute;
+            right: 12px; top: 8px;
+            border: 0; background: rgba(0,0,0,.45);
+            color: #fff; font-size: 24px; line-height: 1;
+            width: 36px; height: 36px; border-radius: 18px;
+            cursor: pointer;
+            }
+            #imgModal .close-btn:focus { outline: 3px solid #FFCC33; }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T20:23:00.206Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misq-umn-edu vsc-initialized">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T15:21:46.012Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div class="container">
+        <a class="sr-only" href="#content">Skip to content</a>
+        <header class="header">
+        <h1 id="top">Review Process</h1>
+        <p class="intro-text"><em>MIS Quarterly</em> is committed to a rigorous, fair, and developmental peer review process.</p>
+        </header>
+        <div class="layout">
+        <!-- Sticky sidebar: Related Policies -->
+        <nav class="toc" aria-label="Related policies">
+        <div class="toc-title">Related Policies</div>
+        <ul>
+            <li><a href="https://misq.umn.edu/policies#s2">Anonymous Review</a></li>
+            <li><a href="https://misq.umn.edu/policies#s4-5">Research Transparency</a></li>
+            <li><a href="https://misq.umn.edu/policies#s4-5">Data Rights and Provenance</a></li>
+            <li><a href="https://misq.umn.edu/policies#s5">Accepted Papers</a></li>
+            <li><a href="https://misq.umn.edu/pages/submission_guidelines">Guidelines for Revision</a></li>
+            <li><a href="https://misq.umn.edu/policies#s3">Resubmissions of Rejected Papers</a></li>
+        </ul>
+        </nav>
+        <!-- Main content -->
+        <main class="content" id="content" role="main">
+        <!-- 1. Commitment -->
+        <section id="commitment" class="section">
+        <h2>Our Commitment</h2>
+        <p>Peer review at <em>MIS Quarterly</em> is rigorous and constructive. Reviews are focused on improving scholarship while maintaining the highest standards of quality and fairness.</p>
+        </section>
+        <!-- 2. Anonymous Review -->
+        <section id="anonymous" class="section">
+        <h2>Anonymous Review</h2>
+        <p><em>MIS Quarterly</em> uses a double‑anonymous process: authors and reviewers remain unknown to one another to support impartiality and fairness. Editors are aware of author identities to manage the process, but this information is not shared with reviewers.</p>
+        </section>
+        <!-- 3. Roles -->
+        <section id="roles" class="section">
+        <h2>Roles in the Process</h2>
+        <h3>Authors</h3>
+        <p>Submit original research that advances the field and respond constructively and thoroughly to editorial and reviewer feedback.</p>
+        <h3>Reviewers</h3>
+        <p>Provide timely, rigorous, and developmental evaluations that add value and help authors maximize the potential of their work.</p>
+        <h3>Associate Editors (AEs)</h3>
+        <p>Coordinate peer review, synthesize reviewer input, and make a recommendation to the SE.</p>
+        <h3>Senior Editors (SEs)</h3>
+        <p>Make the final editorial decision and ensure consistency, fairness, and quality.</p>
+        <h3>Transparency Editor</h3>
+        <p>Oversees research transparency requirements and expectations.</p>
+        </section>
+        <!-- 4. Flow -->
+        <section id="flow" class="section">
+        <h2>Peer Review Flow</h2>
+        <p>Manuscripts undergo an initial review by a Senior Editor and Associate Editor, followed by peer review from external reviewers. The Associate Editor and reviewer feedback helps guide the Senior Editor’s decision.</p>
+        <div class="callout">
+        <strong>At a glance:</strong>
+        <ul>
+            <li>External reviewers: 0–3</li>
+            <li>Initial decision timeline: ~3–5 months</li>
+            <li>Fee to submit: $0</li>
+        </ul>
+        </div>
+        <figure class="figure" aria-label="Peer Review Flow Diagram">
+        <img src="/ImageLibrary/Capstone.png" data-full="/ImageLibrary/Capstone.png" alt="MIS Quarterly Peer Review Flowchart" class="zoomable" />
+        <figcaption>MIS Quarterly Peer Review Flowchart (click to enlarge)</figcaption>
+        </figure>
+        <!-- Modal/lightbox -->
+        <dialog id="imgModal" aria-label="Expanded diagram">
+        <button id="imgModalClose" aria-label="Close" class="close-btn">×</button>
+        <img alt="" id="imgModalImg" />
+        </dialog>
+        <div id="imgModalCaption" class="caption">&nbsp;</div>
+        </section>
+        <!-- 5. Outcomes -->
+        <section id="outcomes" class="section">
+        <h2>Outcomes of Review</h2>
+        <h3>Accepted Papers</h3>
+        <p>Accepted manuscripts are posted as Forthcoming manuscripts with a DOI, then proceed through copyediting and typesetting to final publication.</p>
+        <h3>Revisions</h3>
+        <p>Many submissions undergo one or more rounds of revision based on editorial guidance and reviewer feedback.</p>
+        <h3>Rejections</h3>
+        <p>Please review the journal's policy on submitting a previously rejected paper.</p>
+        </section>
+        </main>
+        <div class="back-to-top">
+        <a href="#top" aria-label="Back to top">Back to top</a>
+        </div>
+        </div>
+        </div>
+        <script>
+(function(){
+  const dlg = document.getElementById('imgModal');
+  const dlgImg = document.getElementById('imgModalImg');
+  const dlgCap = document.getElementById('imgModalCaption');
+  const closeBtn = document.getElementById('imgModalClose');
+
+  // Open when clicking any .zoomable image
+  document.addEventListener('click', function(e){
+    const img = e.target.closest('img.zoomable');
+    if(!img) return;
+    const full = img.getAttribute('data-full') || img.src;
+    dlgImg.src = full;
+    dlgImg.alt = img.alt || '';
+    dlgCap.textContent = img.alt || '';
+    if(typeof dlg.showModal === 'function'){ dlg.showModal(); }
+    else { dlg.setAttribute('open',''); } // fallback if <dialog> unsupported
+  });
+
+  // Close handlers
+  function closeDialog(){
+    if(dlg.open && typeof dlg.close === 'function') dlg.close();
+    else dlg.removeAttribute('open');
+  }
+  closeBtn.addEventListener('click', closeDialog);
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDialog(); });
+
+  // Click outside image closes (backdrop click)
+  dlg.addEventListener('click', function(e){
+    const rect = document.getElementById('imgModalImg').getBoundingClientRect();
+    const outside = e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom;
+    if(outside) closeDialog();
+  });
+})();
+</script>
+    </body>
+</html>
