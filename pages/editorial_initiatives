@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Editorial Initiatives - MIS Quarterly</title>
+        <style>
+            :root {
+            --primary-color: #7A0019;
+            --secondary-color: #89BDC1;
+            --tertiary-color: #FFCC33;
+            --text-default: #1A1A1A;
+            --text-dark-gray: #303030;
+            --text-mid-gray: #575757;
+            --text-light-gray: #A9A9A9;
+            }
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-default);
+            background: #f8f9fa;
+            }
+            /* Header Section */
+            .header-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border-bottom: 3px solid var(--secondary-color);
+            }
+            .header-title {
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            }
+            .header-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-mid-gray);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            }
+            /* Main Container */
+            .container { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; }
+            .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            }
+            /* Initiative Cards */
+            .initiative-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            }
+            .initiative-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+            }
+            .initiative-card.expanded {
+            transform: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+            }
+            .card-header {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+            outline: none;
+            }
+            .card-header:focus-visible {
+            box-shadow: 0 0 0 3px rgba(137,189,193,0.45);
+            }
+            .card-title {
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--text-dark-gray);
+            margin-bottom: 0.5rem;
+            }
+            .card-summary {
+            color: var(--text-mid-gray);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            }
+            .expand-indicator {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, background 0.25s ease;
+            }
+            .initiative-card.expanded .expand-indicator {
+            transform: rotate(180deg);
+            background: var(--primary-color);
+            }
+            .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            will-change: max-height;
+            }
+            .initiative-card.expanded .card-content { max-height: 4000px; }
+            .card-content-inner { padding: 0 2rem 2rem; }
+            .section-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--text-dark-gray);
+            margin: 1.5rem 0 1rem 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            }
+            .subsection-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 1.2rem 0 0.5rem 0;
+            }
+            .content-text { margin-bottom: 1rem; color: var(--text-default); line-height: 1.7; }
+            .highlight-box {
+            background: white;
+            border: 1px solid var(--tertiary-color);
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            }
+            .highlight-box strong { color: var(--text-dark-gray); }
+            .dei-leaders {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            }
+            .leader-card { text-align: center; }
+            .leader-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--primary-color);
+            }
+            .dei-leadership-title {
+            text-align: center;
+            font-weight: 600;
+            }
+            .leader-title { font-size: 0.95rem; color: var(--text-mid-gray); }
+            .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            }
+            .team-member {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            }
+            .member-name { font-weight: 600; color: var(--primary-color); margin-bottom: 0.3rem; }
+            .member-affiliation { font-size: 0.9rem; color: var(--text-mid-gray); }
+            .curation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0;
+            }
+            .curation-item {
+            background: #f8f9fa;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+            font-size: 0.95rem;
+            color: var(--text-dark-gray);
+            }
+            .social-platforms {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            }
+            .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.25s ease;
+            }
+            .social-link:hover { background: var(--primary-color); transform: translateY(-1px); }
+            .contact-info {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border: 1px solid #dee2e6;
+            }
+            .contact-email { color: var(--secondary-color); text-decoration: none; font-weight: 500; }
+            .contact-email:hover { text-decoration: underline; color: var(--primary-color); }
+            ul { margin: 0.5rem 0 1rem 1.5rem; }
+            li { margin-bottom: 0.4rem; color: var(--text-default); }
+            li strong { color: var(--text-dark-gray); }
+            .language-list { margin: 1rem 0; }
+            .language-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .language-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            }
+            /* Responsive */
+            @media (max-width: 768px) {
+            .header-title { font-size: 2.2rem; }
+            .header-subtitle { font-size: 1.1rem; }
+            .initiatives-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .container { padding: 2rem 1rem; }
+            .card-header { padding: 1.5rem; }
+            .expand-indicator { top: 1.5rem; right: 1.5rem; }
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T22:00:06.309Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misq-umn-edu vsc-initialized">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T21:59:32.126Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T16:56:09.325Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T16:53:49.592Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T16:33:25.148Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <!-- Header Section -->
+        <section class="header-section">
+        <h1 class="header-title">Editorial Initiatives</h1>
+        <p class="header-subtitle">
+        Building a more inclusive, accessible, and connected Information Systems research community through innovative programs and collaborative efforts.
+        </p>
+        </section>
+        <!-- Main Content -->
+        <div class="container">
+        <div class="initiatives-grid">
+        <!-- 1) DEI Initiative Card -->
+        <div class="initiative-card" role="region" aria-labelledby="dei-title">
+        <div class="card-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this.parentElement)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement);}">
+        <div class="expand-indicator" aria-hidden="true">+</div>
+        <h3 class="card-title" id="dei-title">Diversity, Equity, and Inclusion</h3>
+        <p class="card-summary">Comprehensive programs to empower underrepresented scholars and create inclusive pathways in IS research through academies, listening sessions, and collaborative workshops.</p>
+        </div>
+        <div class="card-content" aria-hidden="true">
+        <div class="card-content-inner">
+        <!-- Moved DEI Spotlight here; styled as highlight-box and placed BEFORE mission -->
+        <div class="highlight-box" aria-label="DEI Leadership">
+        <p class="content-text dei-leadership-title"><strong>DEI Leadership</strong></p>
+        <div class="dei-leaders">
+        <div class="leader-card">
+        <div class="leader-name">Susan Brown</div>
+        <div class="leader-title">Editor-in-Chief</div>
+        </div>
+        <div class="leader-card">
+        <div class="leader-name">Michelle Carter</div>
+        <div class="leader-title">Director of DEI</div>
+        </div>
+        </div>
+        </div>
+        <div class="highlight-box">
+        <p><strong>Our Mission:</strong> MISQ's Editorial Board proudly supports Diversity, Equity and Inclusion through actionable initiatives that create meaningful change in our field.</p>
+        </div>
+        <h4 class="section-title">Programs &amp; Initiatives</h4>
+        <h5 class="subsection-title">MISQ Scholarly Development Academy</h5>
+        <p class="content-text">Initiated with the aim of empowering disadvantaged populations within our field.</p>
+        <ul>
+            <li><strong>First cohort (2022):</strong> Focused on gathering untenured female scholars from around the world through three virtual sessions for career development.</li>
+            <li><strong>Second Cohort (2023):</strong> Initiated focusing on scholars from the Global South.</li>
+        </ul>
+        <h5 class="subsection-title">Global Listening Sessions</h5>
+        <p class="content-text">MISQ EIC and DEI Director continue to engage in listening sessions with underrepresented Information Systems scholars from around the world.</p>
+        <ul>
+            <li>8+ sessions hosted with underrepresented groups from India, Iran, Germany, Brazil and beyond</li>
+        </ul>
+        <h5 class="subsection-title">Collaborative Efforts</h5>
+        <ul>
+            <li>Joint workshop titled "The Journey to a Successful Publication: A Reflection on the Revision Process" hosted with AIS Doctoral College in April 2023</li>
+            <li>Joint "DEI Best Practices and Paths Forward" workshop hosted with APA for MISQ Board held online in November 2023</li>
+            <li>MISQ participated in AIS' DEI panel at ICIS 2021</li>
+        </ul>
+        <h5 class="subsection-title">Editorial Support</h5>
+        <ul>
+            <li>Flexible Accommodation Guidelines for Senior Editors and Associated Editors</li>
+            <li>"Mentorship track to Publication" for authors from select regions developed and supported by MISQ</li>
+            <li>Proactive Editorial Board engagement in DEI initiatives</li>
+        </ul>
+        <!-- Removed the DEI position-statement "Learn More" block as requested -->
+        </div>
+        </div>
+        </div>
+        <!-- 2) Research Curations Card -->
+        <div class="initiative-card" role="region" aria-labelledby="curations-title">
+        <div class="card-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this.parentElement)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement);}">
+        <div class="expand-indicator" aria-hidden="true">+</div>
+        <h3 class="card-title" id="curations-title">MISQ Research Curations</h3>
+        <p class="card-summary">Curated collections of MISQ articles on significant IS topics, providing researchers with foundational resources and living documents that evolve with new publications.</p>
+        </div>
+        <div class="card-content" aria-hidden="true">
+        <div class="card-content-inner">
+        <p class="content-text">Our research curations seek to identify topics of significant interest to the IS field and other disciplines. MISQ curation initiatives call for papers that make significant contributions to these topics, and provide researchers with easy access to multiple articles that can act as a foundation for further research.</p>
+        <div class="highlight-box">
+        <p><strong>Living Documents:</strong> Each curation includes a short summary of the topic and the collection of related MISQ articles. Accessible through MISQ's website, these curations exist as living documents that are updated as new articles related to the topic are published.</p>
+        </div>
+        <h4 class="section-title">Research Curations Editor</h4>
+        <div class="team-member">
+        <div class="member-name">Hind Benbya</div>
+        <div class="member-affiliation">Deakin University <br />
+        <a class="contact-email" href="mailto:h.benbya@deakin.edu.au">h.benbya@deakin.edu.au</a></div>
+        </div>
+        <h4 class="section-title">Current Research Curations</h4>
+        <div class="curation-grid">
+        <div class="curation-item">Information Systems Development</div>
+        <div class="curation-item">Online Word-of-Mouth</div>
+        <div class="curation-item">IS Control and Governance</div>
+        <div class="curation-item">IT Project Management</div>
+        <div class="curation-item">IT Workforce</div>
+        <div class="curation-item">Information Systems Alignment</div>
+        <div class="curation-item">Information Systems Sourcing</div>
+        <div class="curation-item">Health Information Technology</div>
+        <div class="curation-item">Knowledge Management</div>
+        <div class="curation-item">IS Use</div>
+        <div class="curation-item">Information Privacy</div>
+        <div class="curation-item">Trust</div>
+        <div class="curation-item">Securing Digital Assets</div>
+        <div class="curation-item">Data Management</div>
+        <div class="curation-item">IT-supported Collaboration</div>
+        </div>
+        <div class="contact-info">
+        <p><strong>Explore Curations:</strong> <a href="https://www.misqresearchcurations.org/mis-quarterly-research-curations" class="contact-email">Visit our Research Curations page</a></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- 3) MISQ Insider Card -->
+        <div class="initiative-card" role="region" aria-labelledby="insider-title">
+        <div class="card-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this.parentElement)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement);}">
+        <div class="expand-indicator" aria-hidden="true">+</div>
+        <h3 class="card-title" id="insider-title">MISQ Insider</h3>
+        <p class="card-summary">Behind-the-scenes interviews with MISQ authors, offering deeper insights into research and providing professional development opportunities for junior scholars.</p>
+        </div>
+        <div class="card-content" aria-hidden="true">
+        <div class="card-content-inner">
+        <p class="content-text">MISQ Insider is an initiative that offers a behind-the-scenes look at the research published in MISQ. As an MISQ Insider Contributor, scholars have the unique opportunity to engage with MIS Quarterly authors and contribute to the IS community.</p>
+        <div class="highlight-box">
+        <p><strong>Our Interview Series:</strong> Offers MISQ authors a chance to go deeper into research and projects that may not always be evident in the article. Insider contributors are expected to read the relevant paper and arrange a virtual or email interview with the author(s).</p>
+        </div>
+        <h4 class="section-title">What's in it for you?</h4>
+        <ul>
+            <li><strong>Engage with leading research:</strong> Choose an article from MIS Quarterly and dive into the intricacies of innovative studies</li>
+            <li><strong>Collaborate and share:</strong> Work alongside fellow researchers and interact directly with authors to discuss and explore these fascinating topics</li>
+            <li><strong>Contribute to the community:</strong> Your insights and contributions will help elevate the discourse within the IS community</li>
+            <li><strong>Invaluable insights:</strong> Gain firsthand knowledge and understanding of cutting-edge research directly from the authors themselves</li>
+            <li><strong>Professional growth:</strong> Build and expand your academic network, connecting with leading scholars in the field</li>
+        </ul>
+        <h4 class="section-title">Eligibility &amp; Process</h4>
+        <p class="content-text"><strong>Eligibility:</strong> Doctoral students (including competitive pre-docs), post-docs, and junior faculty (&lt;3 years post-PhD) in IS or related fields are eligible to be contributors.</p>
+        <p class="content-text">Signing up does not guarantee an opportunity to contribute. Depending on demand, we will prioritize assigning articles to more junior contributors and contributors from less-represented regions. We are seeking representation from around the world!</p>
+        <h4 class="section-title">Insider Coordinator Team</h4>
+        <div class="team-grid">
+        <div class="team-member">
+        <div class="member-name">Robert Park</div>
+        <div class="member-affiliation">Ivey Business School</div>
+        </div>
+        <div class="team-member">
+        <div class="member-name">Hejia Liu</div>
+        <div class="member-affiliation">University of Minnesota</div>
+        </div>
+        <div class="team-member">
+        <div class="member-name">Grant Oosterwyk</div>
+        <div class="member-affiliation">University of Cape Town</div>
+        </div>
+        </div>
+        <div class="contact-info">
+        <p><strong>Get Involved:</strong> <a href="https://www.linkedin.com/company/misqinsider" class="contact-email">MISQ Insider page</a></p>
+        <p><strong>Contact the Team:</strong> <a href="mailto:MISQInsider@gmail.com" class="contact-email">MISQInsider@gmail.com</a></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- 4) Local Language Promotion Card -->
+        <div class="initiative-card" role="region" aria-labelledby="llp-title">
+        <div class="card-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this.parentElement)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement);}">
+        <div class="expand-indicator" aria-hidden="true">+</div>
+        <h3 class="card-title" id="llp-title">Local Language Promotion</h3>
+        <p class="card-summary">Breaking down language barriers in science by promoting MISQ research across multiple languages to maximize accessibility and global impact.</p>
+        </div>
+        <div class="card-content" aria-hidden="true">
+        <div class="card-content-inner">
+        <div class="highlight-box">
+        <p><strong>Our Commitment:</strong> Language bias is one of many barriers in science, and one we are committed to reducing.</p>
+        </div>
+        <p class="content-text">Though MIS Quarterly is an English-language journal, we seek to promote our work across as many languages as possible to maximize accessibility and impact. This not only provides further diversity in the papers and viewpoints we receive, but strengthens the field as a whole.</p>
+        <h4 class="section-title">How It Works</h4>
+        <p class="content-text">MIS Quarterly's Local Language Promotion initiative is run by volunteers from significant language groups around the world.</p>
+        <h4 class="section-title">Current Languages</h4>
+        <div class="language-list">
+        <div class="language-item">
+        <div class="language-name">Mandarin Chinese</div>
+        <p class="content-text">We have begun our local language promotion initiative with Mandarin Chinese.</p>
+        <p class="content-text"><strong>Introductory post:</strong> <a href="https://mp.weixin.qq.com/s/2kloOsucKxNqHTTWgGu40w" class="contact-email">WeChat Article</a></p>
+        <div class="team-grid">
+        <div class="team-member">
+        <div class="member-name">Zhenhui Jack Jiang</div>
+        <div class="member-affiliation">The University of Hong Kong</div>
+        </div>
+        <div class="team-member">
+        <div class="member-name">Sean Xin Xu</div>
+        <div class="member-affiliation">Tsinghua University</div>
+        </div>
+        <div class="team-member">
+        <div class="member-name">Xue Yang</div>
+        <div class="member-affiliation">Nanjing University (Coordinator)</div>
+        </div>
+        <div class="team-member">
+        <div class="member-name">Qiang Ye</div>
+        <div class="member-affiliation">Harbin Institute of Technology</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="contact-info">
+        <p><strong>Volunteer to Lead:</strong> If you are a representative from a non-English speaking language and would like to volunteer to lead a promotion initiative in your local language, please contact us:</p>
+        <ul>
+            <li>Susan Brown (Editor-in-Chief): <a href="mailto:misq-eic@umn.edu" class="contact-email">misq-eic@umn.edu</a></li>
+            <li>Michelle Carter (Director of DEI): <a href="mailto:michelle.carter@manchester.ac.uk" class="contact-email">michelle.carter@manchester.ac.uk</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- 5) Social Media Platforms Card -->
+        <div class="initiative-card" role="region" aria-labelledby="social-title">
+        <div class="card-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this.parentElement)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement);}">
+        <div class="expand-indicator" aria-hidden="true">+</div>
+        <h3 class="card-title" id="social-title">MISQ Social Media Platforms</h3>
+        <p class="card-summary">Celebrating impactful research and building community connections across multiple social media platforms to bridge the science-practice gap.</p>
+        </div>
+        <div class="card-content" aria-hidden="true">
+        <div class="card-content-inner">
+        <p class="content-text">We started MIS Quarterly's social media initiative with the simple desire to celebrate the research published in the journal. The result of our journey is not only #misq #research, but an amazing community of scholars we've connected with along the way.</p>
+        <div class="highlight-box">
+        <p><strong>Our Mission:</strong> We're consistently motivated to keep bonding with our community better, and hold ourselves accountable to bridge new communities. That includes using social media to close the science-practice gap.</p>
+        </div>
+        <p class="content-text">For us, celebrating impactful research that you are excited to read every quarter, and share it with others, is all that matters. We are not sure when your manuscript will be accepted for publication in MIS Quarterly, but when that acceptance e-mail arrives in your inbox, we will be ready to celebrate with you, on social media, of course!</p>
+        <h4 class="section-title">Connect With Us</h4>
+        <p class="content-text">We invite you to connect with us on our social media platforms and engage with the MISQ community on an ongoing basis. We use the platforms to share videos, podcasts, and other content about MISQ articles and to share information about MISQ events like author and reviewer development workshops, about special issues, and about other MISQ initiatives.</p>
+        <div class="social-platforms">
+        <a href="https://www.linkedin.com/company/mis-quarterly" class="social-link">LinkedIn</a>
+        <a href="https://www.facebook.com/MISQuarterly" class="social-link">Facebook</a>
+        </div>
+        <p class="content-text">We welcome your participation on our social media platforms!</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script>
+      // Toggle card expansion with accessibility updates
+      function toggleCard(card) {
+        const header = card.querySelector('.card-header');
+        const content = card.querySelector('.card-content');
+
+        const isExpanded = card.classList.contains('expanded');
+
+        // Close other cards
+        document.querySelectorAll('.initiative-card').forEach(c => {
+          if (c !== card) {
+            c.classList.remove('expanded');
+            const h = c.querySelector('.card-header');
+            const ct = c.querySelector('.card-content');
+            if (h) h.setAttribute('aria-expanded', 'false');
+            if (ct) ct.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        // Toggle current
+        if (isExpanded) {
+          card.classList.remove('expanded');
+          header.setAttribute('aria-expanded', 'false');
+          content.setAttribute('aria-hidden', 'true');
+        } else {
+          card.classList.add('expanded');
+          header.setAttribute('aria-expanded', 'true');
+          content.setAttribute('aria-hidden', 'false');
+        }
+      }
+    </script>
+        </div>
+    </body>
+</html>
