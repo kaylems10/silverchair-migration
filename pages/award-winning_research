@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Award-Winning Research</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { line-height: 1.6; color: #1A1A1A; background: #f8f9fa; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+  .header { text-align: center; margin-bottom: 60px; }
+  .header h1 { font-size: 3rem; font-weight: 700; color: #7A0019; margin-bottom: 20px; }
+  .header p { font-size: 1.2rem; color: #575757; max-width: 600px; margin: 0 auto; }
+
+  .award-intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px;
+  }
+  .award-type {
+    background: white; padding: 30px; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid #7A0019;
+  }
+  .award-type.davis-dickson { border-top-color: #89BDC1; }
+  .award-type h2 {
+    font-size: 1.5rem; color: #303030; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: 600;
+  }
+  .award-type h2::before { content: "🏆"; font-size: 1.2rem; }
+  .award-type.davis-dickson h2::before { content: "💎"; }
+  .award-type p { color: #575757; font-size: 1rem; }
+
+  /* ===== Timeline layout (grid-based for perfect alignment) ===== */
+  .timeline-container {
+    position: relative;
+    margin: 60px 0;
+  }
+  /* Spine runs full height of the container */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 4px;
+    background: #89BDC1;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+
+  .decade-marker { position: relative; text-align: center; margin: 80px 0; }
+  .decade-marker .decade-label {
+    display: inline-block; background: #303030; color: white; padding: 15px 30px; border-radius: 50px;
+    font-size: 1.3rem; font-weight: bold; box-shadow: 0 10px 30px rgba(48,48,48,0.3);
+    position: relative; z-index: 2; cursor: pointer; transition: all 0.3s ease;
+  }
+  .decade-marker .decade-label:hover { background: #7A0019; transform: translateY(-2px); }
+
+  /* Each row is a 3-col grid: left | middle (spine/dot) | right */
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+    margin: 40px 0;
+    min-height: 160px; /* ensures the dot can sit centered */
+    position: relative;
+  }
+
+  /* Place the content on the left or right column and make widths uniform */
+  .timeline-content { width: 100%; }
+  .timeline-item.left  .timeline-content{ grid-column:1; justify-self:end;  width: var(--cardw); max-width:100%; }
+.timeline-item.right .timeline-content{ grid-column:3; justify-self:start; width: var(--cardw); max-width:100%; }
+
+  /* Dot sits in the middle column, perfectly centered */
+  .timeline-dot {
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    width: 20px; height: 20px; background: #7A0019; border-radius: 50%;
+    border: 4px solid white; box-shadow: 0 0 0 4px #7A0019;
+  }
+  .timeline-item.impact .timeline-dot { background: #89BDC1; box-shadow: 0 0 0 4px #89BDC1; }
+
+  /* ===== Card styling ===== */
+  .award-card {
+    background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-right: 5px solid #7A0019; cursor: pointer; transition: all 0.3s ease; position: relative;
+  }
+  .award-card.davis-dickson { border-right: none; border-left: 5px solid #89BDC1; }
+  .award-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
+  .award-badge {
+    position: absolute; top: -15px; right: 20px; background: #7A0019; color: white;
+    padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;
+  }
+  .award-badge.davis-dickson { background: #89BDC1; color: #1A1A1A; }
+
+  .year { font-size: 2rem; font-weight: bold; color: #7A0019; margin-bottom: 10px; }
+  .paper-title { font-size: 1.2rem; font-weight: 600; color: #1A1A1A; margin-bottom: 10px; line-height: 1.4; }
+  .paper-title a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+  .paper-title a:hover { border-bottom-color: currentColor; }
+  .authors { color: #575757; font-size: 1rem; margin-bottom: 15px; font-style: italic; }
+  .publication-details { color: #89BDC1; font-size: 0.9rem; font-weight: 500; }
+
+  .expanded-details { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; margin-top: 0; }
+  .award-card.expanded .expanded-details {
+    max-height: 200px; margin-top: 15px; padding-top: 15px; border-top: 2px solid #f0f0f0;
+  }
+  .doi-link {
+    color: #89BDC1; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 10px;
+    padding: 5px 10px; border: 1px solid #89BDC1; border-radius: 5px; transition: all 0.3s ease;
+  }
+  .doi-link:hover { background: #89BDC1; color: white; }
+  .special-note { background: #FFCC33; color: #1A1A1A; padding: 8px 12px; border-radius: 5px; font-size: 0.9rem; margin-top: 10px; display: inline-block; }
+
+  .stats-bar { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; text-align: center; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; }
+  .stat-item { text-align: center; }
+  .stat-number { font-size: 2.5rem; font-weight: bold; color: #7A0019; display: block; }
+  .stat-label { color: #575757; font-size: 0.9rem; margin-top: 5px; }
+
+  @media (max-width: 900px) {
+    /* tighter max width on smaller screens but still uniform */
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content { max-width: 460px; }
+  }
+
+  @media (max-width: 768px) {
+    .award-intro { grid-template-columns: 1fr; gap: 30px; }
+    /* Collapse to single column; spine shifts left, dots stay centered on the spine */
+    .timeline-item {
+      grid-template-columns: 30px 1fr;   /* spine | content */
+      min-height: unset;
+      gap: 16px;
+    }
+    .timeline-line { left: 30px; transform: translateX(-50%); }
+    .timeline-dot {
+      grid-column: 1;
+      justify-self: center;
+      align-self: center;
+      margin: 22px 0;  /* visual spacing on stacked layout */
+    }
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+      grid-column: 2; justify-self: stretch; max-width: none;
+    }
+    .header h1 { font-size: 2rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+
+</head>
+<body class="vsc-domain-sitemaster-misq-umn-edu vsc-initialized">
+<div class="container">
+<header class="header">
+<h1>Award-Winning Research</h1>
+<p>Celebrating three decades of exceptional scholarship and lasting impact in information systems research</p>
+</header>
+
+<div class="stats-bar">
+<div class="stats-grid">
+<div class="stat-item">
+<span class="stat-number" id="years-count">–</span>
+<div class="stat-label">Years of Recognition</div>
+</div>
+<div class="stat-item">
+<span class="stat-number" id="papers-count">–</span>
+<div class="stat-label">Papers Honored</div>
+</div>
+<div class="stat-item">
+<span class="stat-number">2</span>
+<div class="stat-label">Award Categories</div>
+</div>
+<div class="stat-item">
+<span class="stat-number">100+</span>
+<div class="stat-label">Distinguished Authors</div>
+</div>
+</div>
+</div>
+<div class="award-intro">
+<div class="award-type">
+<h2>MISQ Paper of the Year</h2>
+<p>This is awarded based upon recommendations from the editorial board and editor-in-chief analysis and selection.</p>
+</div>
+<div class="award-type davis-dickson">
+<h2>Davis-Dickson Impact Award</h2>
+<p>Named in honor of Professors Gordon Davis and Gary Dickson for their central roles in founding and leading MISQ. This award recognizes a paper published one decade ago that is deemed to have significant and sustained scholarly impact and a real or potential impact beyond academia.</p>
+</div>
+</div>
+
+<div class="timeline-container">
+<div class="timeline-line"></div>
+
+<div class="decade-marker">
+<div class="decade-label">2020s</div>
+</div>
+
+<!-- 2024 Impact (right) -->
+<div class="timeline-item right impact">
+<div class="timeline-content">
+<div class="award-card davis-dickson">
+<div class="award-badge davis-dickson">Davis-Dickson Impact</div>
+<div class="year">2024</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/38/1/275/1548/What-s-Different-about-Social-Media-Networks-A?redirectedFrom=fulltext" target="_blank" rel="noopener">What's Different about Social Media Networks? A Framework and Research Agenda</a></div>
+<div class="authors">Gerald C. Kane, Maryam Alavi, Giuseppe (Joe) Labianca, and Stephen P. Borgatti</div>
+<div class="publication-details">Volume 38, Issue 1, 2014</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2023 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2023</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2022/16733" target="_blank" rel="noopener">
+From Bits to Atoms: Open Source Hardware at CERN
+</a>
+</div>
+<div class="authors">Laia Pujol Priego and Jonathan Wareham</div>
+<div class="publication-details">Volume 47, Issue 2, 2023</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2023 Impact (right) -->
+<div class="timeline-item right impact">
+<div class="timeline-content">
+<div class="award-card davis-dickson">
+<div class="award-badge davis-dickson">Davis-Dickson Impact</div>
+<div class="year">2023</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/37/3/907/1504/The-Generative-Mechanisms-of-Digital?redirectedFrom=fulltext" target="_blank" rel="noopener">The Generative Mechanisms of Digital Infrastructure Evolution</a></div>
+<div class="authors">Ola Henfridsson and Bendik Bygstad</div>
+<div class="publication-details">Volume 35, Issue 3, 2013</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2022 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2022</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2021/15598" target="_blank" rel="noopener">
+Algorithmic Processes of Social Alertness and Social Transmission: How Bots Disseminate Information on Twitter
+</a>
+</div>
+<div class="authors">Carolina Alves de Lima Salge, Elena Karahanna, and Jason Bennett Thatcher</div>
+<div class="publication-details">Volume 46, Issue 1, 2022</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2022 Impact (right) -->
+<div class="timeline-item right impact">
+<div class="timeline-content">
+<div class="award-card davis-dickson">
+<div class="award-badge davis-dickson">Davis-Dickson Impact</div>
+<div class="year">2022</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/35/1/147/1430/When-Flexible-Routines-Meet-Flexible-Technologies?redirectedFrom=fulltext" target="_blank" rel="noopener">When Flexible Routines Meet Flexible Technologies: Affordance, Constraint, and the Imbrication of Human and Material Agencies</a></div>
+<div class="authors">Paul M. Leonardi</div>
+<div class="publication-details">Volume 35, Issue 1, 2011</div>
+<div class="expanded-details">
+</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2021 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2021</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2021/16564" target="_blank" rel="noopener">
+Is AI Ground Truth Really True? The Dangers of Training and Evaluating AI Tools Based on Experts' Know-What
+</a>
+</div>
+<div class="authors">Sarah Lebovitz, Natalia Levina, and Hila Lifshitz-Assaf</div>
+<div class="publication-details">Volume 45, Issue 3b</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2021 Impact (right) -->
+<div class="timeline-item right impact">
+<div class="timeline-content">
+<div class="award-card davis-dickson">
+<div class="award-badge davis-dickson">Davis-Dickson Impact</div>
+<div class="year">2021</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/35/4/989/2607/Information-Privacy-Research-an-Interdisciplinary?redirectedFrom=fulltext" target="_blank" rel="noopener">Information Privacy Research: An Interdisciplinary Review</a></div>
+<div class="authors">H. Jeff Smith, Tamara Dinev, and Heng Xu</div>
+<div class="publication-details">Volume 35, Issue 4, 2011</div>
+<div class="expanded-details">
+</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2020 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2020</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2020/16371" target="_blank" rel="noopener">
+Understanding Echo Chambers and Filter Bubbles: The Impact of Social Media on Diversification and Partisan Shifts in News Consumption
+</a>
+</div>
+<div class="authors">Brent Kitchens, Steven L. Johnson, and Peter Gray</div>
+<div class="publication-details">Volume 44, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<div class="decade-marker">
+<div class="decade-label">2010s</div>
+</div>
+
+<!-- 2019 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2019</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2019/14439" target="_blank" rel="noopener">
+Expecting the Unexpected: Effects of Data Collection Design Choices on the Quality of Crowdsourced User-Generated Content
+</a>
+</div>
+<div class="authors">Roman Lukyanenko, Jeffrey Parsons, Yolanda F. Wiersma, and Mahed Maddah</div>
+<div class="publication-details">Volume 43, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2018 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2018</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2018/14316" target="_blank" rel="noopener">
+Beyond the Privacy Paradox: Objective Versus Relative Risk in Privacy Decision Making
+</a>
+</div>
+<div class="authors">Idris Adjerid, Eyal Peer, and Alessandro Acquisti</div>
+<div class="publication-details">Volume 42, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2017 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2017</div>
+<div class="paper-title">
+<a href="https://doi.org/10.25300/MISQ/2017/41.1.13" target="_blank" rel="noopener">
+Platform Ecosystems: How Developers Invert the Firm
+</a>
+</div>
+<div class="authors">Geoffrey Parker, Marshall Van Alstyne, and Xiaoyue Xiang</div>
+<div class="publication-details">Volume 41, Issue 1</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2016 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2016</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/40/2/331/1578/Digital-Action-Repertoires-and-Transforming-a?redirectedFrom=fulltext" target="_blank" rel="noopener">Digital Action Repertoires and Transforming a Social Movement Organization</a></div>
+<div class="authors">Lisen Selander and Sirkka L. Jarvenpaa</div>
+<div class="publication-details">Volume 40, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2015 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2015</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/39/3/565/329/Vocal-Minority-and-Silent-Majority-How-Do-Online?redirectedFrom=fulltext" target="_blank" rel="noopener">Vocal Minority and Silent Majority: How Do Online Ratings Reflect Population Perceptions of Quality?</a></div>
+<div class="authors">Guodong (Gordon) Gao, Brad N. Greenwood, Ritu Agarwal, and Jeffrey S. McCullough</div>
+<div class="publication-details">Volume 39, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2014 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2014</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/38/4/955/125/Internet-s-Dirty-Secret-Assessing-the-Impact-of?redirectedFrom=fulltext" target="_blank" rel="noopener">Internet's Dirty Secret: Assessing the Impact of Online Intermediaries on HIV Transmission</a></div>
+<div class="authors">Jason Chan and Anindya Ghose</div>
+<div class="publication-details">Volume 38, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2013 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2013</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/37/4/1043/545/Impact-of-Wikipedia-on-Market-Information?redirectedFrom=fulltext" target="_blank" rel="noopener">Impact of Wikipedia on Market Information Environment: Evidence on Management Disclosure and Investor Reaction</a></div>
+<div class="authors">Sean Xin Xu and Xiaoquan (Michael) Zhang</div>
+<div class="publication-details">Volume 37, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2012 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2012</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/36/1/21/1456/Shackled-to-the-Status-Quo-The-Inhibiting-Effects?redirectedFrom=fulltext" target="_blank" rel="noopener">Shackled to the Status Quo: The Inhibiting Effects of Incumbent System Habit, Switching Costs, and Inertia on New System Acceptance</a></div>
+<div class="authors">Greta Polites and Elena Karahanna</div>
+<div class="publication-details">Volume 36, Issue 1</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2011 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2011</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/35/1/147/1430/When-Flexible-Routines-Meet-Flexible-Technologies?redirectedFrom=fulltext" target="_blank" rel="noopener">When Flexible Routines Meet Flexible Technologies: Affordance, Constraint, and the Imbrication of Human and Material Agencies</a></div>
+<div class="authors">Paul M. Leonardi</div>
+<div class="publication-details">Volume 35, Issue 1</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2010 Paper (left) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2010</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/34/3/435/1426/Detecting-Fake-Websites-The-Contribution-of?redirectedFrom=fulltext" target="_blank" rel="noopener">Detecting Fake Websites: The Contribution of Statistical Learning Theory</a></div>
+<div class="authors">Ahmed Abbasi, Zhu Zhang, David Zimbra, Hsinchun Chen, and Jay F. Nunamaker Jr.</div>
+<div class="publication-details">Volume 34, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<div class="decade-marker">
+<div class="decade-label">2000s</div>
+</div>
+
+<!-- 2009 Paper -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2009</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/33/3/539/483/Exploring-Human-Images-in-Website-Design-A-Multi?redirectedFrom=fulltext" target="_blank" rel="noopener">Exploring Human Images in Website Design: A Multi-Method Approach</a></div>
+<div class="authors">Dianne Cyr, Milena Head, Hector Larios, and Bing Pan</div>
+<div class="publication-details">Volume 33, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2008 Paper -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2008</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/32/3/575/383/Media-Tasks-and-Communication-Processes-A-Theory?redirectedFrom=fulltext" target="_blank" rel="noopener">Media, Tasks, and Communication Processes: A Theory of Media Synchronicity</a></div>
+<div class="authors">Alan R. Dennis, Robert M. Fuller, and Joseph S. Valacich</div>
+<div class="publication-details">Volume 32, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2007 Paper -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2007</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/31/4/657/1296/Toward-a-Deeper-Understanding-of-System-Usage-in?redirectedFrom=fulltext" target="_blank" rel="noopener">Toward a Deeper Understanding of System Usage in Organizations: A Multilevel Perspective</a></div>
+<div class="authors">Andrew Burton-Jones and Michael J. Gallivan</div>
+<div class="publication-details">Volume 31, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2006 Paper -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2006</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/30/Special%20Issue/439/1384/Industry-Wide-Information-Systems-Standardization?redirectedFrom=fulltext" target="_blank" rel="noopener">Industry-Wide Information Systems Standardization as Collective Action: The Case of the U.S. Residential Mortgage Industry</a></div>
+<div class="authors">M. Lynne Markus, Charles W. Steinfield, Rolf T. Wigand, and Gabe Minton</div>
+<div class="publication-details">Volume 30, Special Issue, August 2006</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+
+<!-- 2005 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2005</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/29/3/461/315/A-Multilevel-Model-of-Resistance-to-Information?redirectedFrom=fulltext" target="_blank" rel="noopener">A Multilevel Model of Resistance to Information Technology Implementation</a></div>
+<div class="authors">Liette Lapointe and Suzanne Rivard</div>
+<div class="publication-details">Volume 29, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2004 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2004</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/28/4/553/347/Innovating-Mindfully-with-Information-Technology1?redirectedFrom=fulltext" target="_blank" rel="noopener">Innovating Mindfully with Information Technology</a></div>
+<div class="authors">E. Burton Swanson and Neil C. Ramiller</div>
+<div class="publication-details">Volume 28, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2003 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2003</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/27/2/197/279/Reconceptualizing-Users-as-Social-Actors-in?redirectedFrom=fulltext" target="_blank" rel="noopener">Reconceptualizing Users as Social Actors in Information Systems Research</a></div>
+<div class="authors">Roberta Lamb and Rob Kling</div>
+<div class="publication-details">Volume 27, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2002 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2002</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/26/4/397/1339/Review-Power-and-Information-Technology-Research-A?redirectedFrom=fulltext" target="_blank" rel="noopener">Review: Power and Information Technology Research: A Metatriangulation Review</a></div>
+<div class="authors">Jon (Sean) Jasperson, Traci A. Carte, Carol S. Saunders, Brian S. Butler, Henry J. P. Croes, and Weijun Zheng</div>
+<div class="publication-details">Volume 26, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2001 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2001</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/25/2/251/1306/Review-A-Cognitive-Affective-Model-of?redirectedFrom=fulltext" target="_blank" rel="noopener">Review: A Cognitive-Affective Model of Organizational Communication for Designing IT</a></div>
+<div class="authors">Dov Te’eni</div>
+<div class="publication-details">Volume 25, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 2000 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">2000</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/20/4/569/1288/Technology-Adaptation-The-Case-of-a-Computer?redirectedFrom=fulltext" target="_blank" rel="noopener">Technology Adaptation: The Case of a Computer-Supported Inter-Organizational Virtual Team</a></div>
+<div class="authors">Ann Majchrzak, Ronald E. Rice, Arvind Malhotra, Nelson King, and Sulin Ba</div>
+<div class="publication-details">Volume 24, Issue 4</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+<div class="decade-marker">
+<div class="decade-label">1990s</div>
+</div>
+
+
+<!-- 1999 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1999</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/23/1/67/1251/A-Set-of-Principles-for-Conducting-and-Evaluating?redirectedFrom=fulltext" target="_blank" rel="noopener">A Set of Principles for Conducting and Evaluating Interpretive Field Studies in Information Systems</a></div>
+<div class="authors">Heinz K. Klein and Michael D. Myers</div>
+<div class="publication-details">Volume 23, Issue 1</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1998 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1998</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/22/2/199/1223/The-Merchant-of-Prato-Revisited-Toward-a-Third?redirectedFrom=fulltext" target="_blank" rel="noopener">The Merchant of Prato — Revisited: Toward a Third Rationality of Information Systems</a></div>
+<div class="authors">Kuldeep Kumar, Han G. van Dissel, and Paola Bielli</div>
+<div class="publication-details">Volume 22, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1997 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1997</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/21/2/145/1202/Communication-Richness-in-Electronic-Mail-Critical?redirectedFrom=fulltext" target="_blank" rel="noopener">Communication Richness in Electronic Mail: Critical Social Theory and the Contextuality of Meaning</a></div>
+<div class="authors">Ojelanki K. Ngwenyama and Allen S. Lee</div>
+<div class="publication-details">Volume 21, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1996 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1996</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/20/2/121/1194/Productivity-Business-Profitability-and-Consumer?redirectedFrom=fulltext" target="_blank" rel="noopener">Productivity, Business Profitability, and Consumer Surplus: Three Different Measures of Information Technology Value</a></div>
+<div class="authors">Lorin M. Hitt and Erik Brynjolfsson</div>
+<div class="publication-details">Volume 20, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1995 (two winners) -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1995</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/19/2/137/1164/Business-Value-of-Information-Technology-A-Study?redirectedFrom=fulltext" target="_blank" rel="noopener">Business Value of Information Technology: A Study of Electronic Data Interchange</a></div>
+<div class="authors">Tridas Mukhopadhyay, Sunder Kekre, and Suresh Kalathur</div>
+<div class="publication-details">Volume 19, Issue 2</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1995</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/19/3/265/1171/The-Use-of-Information-Technology-to-Enhance?redirectedFrom=fulltext" target="_blank" rel="noopener">The Use of Information Technology to Enhance Management School Education: A Theoretical View</a></div>
+<div class="authors">Dorothy E. Leidner and Sirkka L. Jarvenpaa</div>
+<div class="publication-details">Volume 19, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1994 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1994</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/18/3/251/242/Computerized-Loan-Origination-Systems-An-Industry?redirectedFrom=fulltext" target="_blank" rel="noopener">Computerized Loan Origination Systems</a></div>
+<div class="authors">Christopher M. Hess and Chris F. Kemerer</div>
+<div class="publication-details">Volume 18, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+<!-- 1993 -->
+<div class="timeline-item left paper">
+<div class="timeline-content">
+<div class="award-card">
+<div class="award-badge">Paper of the Year</div>
+<div class="year">1993</div>
+<div class="paper-title"><a href="https://misq.umn.edu/misq/article-abstract/17/3/309/1129/CASE-Tools-as-Organizational-Change-Investigating?redirectedFrom=fulltext" target="_blank" rel="noopener">CASE Tools as Organizational Change: Investigating Incremental and Radical Changes in Systems Development</a></div>
+<div class="authors">Wanda J. Orlikowski</div>
+<div class="publication-details">Volume 17, Issue 3</div>
+</div>
+</div>
+<div class="timeline-dot"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+  // Years of Recognition: 1993 → current year
+  (function() {
+    const startYear = 1993;
+    const currentYear = new Date().getFullYear();
+    const yearsEl = document.getElementById('years-count');
+    if (yearsEl) yearsEl.textContent = (currentYear - startYear + 1).toString();
+  })();
+
+  // Papers Honored: count all award cards
+  (function() {
+    const totalCards = document.querySelectorAll('.timeline-container .award-card').length;
+    const papersEl = document.getElementById('papers-count');
+    if (papersEl) papersEl.textContent = totalCards.toString();
+  })();
+
+  // Make entire card clickable if the title contains a link
+  document.querySelectorAll('.award-card .paper-title a').forEach(a => {
+    const card = a.closest('.award-card');
+    if (!card) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() !== 'a') a.click();
+    });
+  });
+</script>
+
+</body>
+</html>
