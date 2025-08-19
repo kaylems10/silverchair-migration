@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About MIS Quarterly</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background-color: #ffffff;
+            }
+            .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            }
+            .header {
+            text-align: center;
+            margin-bottom: 60px;
+            }
+            .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7A0019;
+            margin-bottom: 20px;
+            }
+            .mission-vision-section {
+            margin-bottom: 80px;
+            }
+            .mission-card, .vision-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            }
+            .mission-card h2, .vision-card h2 {
+            font-size: 1.8rem;
+            color: #303030;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            }
+            .mission-card p, .vision-card p {
+            font-size: 1.1rem;
+            color: #575757;
+            margin-bottom: 15px;
+            }
+            .vision-links {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #89BDC1;
+            }
+            .vision-links p {
+            font-weight: 600;
+            color: #303030;
+            margin-bottom: 10px;
+            }
+            .vision-links a {
+            color: #89BDC1;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            }
+            .vision-links a:hover {
+            color: #303030;
+            border-bottom-color: #FFCC33;
+            }
+            .framework-section {
+            margin-bottom: 80px;
+            }
+            .framework-title {
+            text-align: center;
+            margin-bottom: 50px;
+            }
+            .framework-title h2 {
+            font-size: 2.5rem;
+            color: #303030;
+            margin-bottom: 20px;
+            }
+            .framework-subtitle {
+            font-size: 1.2rem;
+            color: #575757;
+            max-width: 600px;
+            margin: 0 auto;
+            }
+            .framework-diagram {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+            }
+            .pillar {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            }
+            .pillar:nth-child(1) {
+            border-left: 4px solid #7A0019;
+            }
+            .pillar:nth-child(2) {
+            border-left: 4px solid #89BDC1;
+            }
+            .pillar:nth-child(3) {
+            border-left: 4px solid #FFCC33;
+            }
+            .pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            }
+            .pillar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #303030;
+            }
+            .pillar-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #303030;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 40px;
+            margin-bottom: 15px;
+            }
+            .pillar:nth-child(2) .pillar-number {
+            background: #89BDC1;
+            }
+            .pillar:nth-child(3) .pillar-number {
+            background: #FFCC33;
+            color: #1A1A1A;
+            }
+            .pillar p {
+            color: #575757;
+            font-size: 1rem;
+            line-height: 1.7;
+            }
+            .excellence-formula {
+            background: white;
+            border: 2px solid #89BDC1;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            }
+            .excellence-formula h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #303030;
+            }
+            .formula {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 20px 0;
+            color: #7A0019;
+            }
+            .excellence-formula p {
+            color: #575757;
+            font-size: 1.1rem;
+            }
+            .interdisciplinary-note {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #FFCC33;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            }
+            .interdisciplinary-note h4 {
+            color: #303030;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            }
+            .interdisciplinary-note p {
+            color: #575757;
+            margin-bottom: 15px;
+            }
+            .interdisciplinary-note a {
+            color: #89BDC1;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            }
+            .interdisciplinary-note a:hover {
+            color: #303030;
+            border-bottom-color: #FFCC33;
+            }
+            .impact-metrics {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            }
+            .impact-metrics h3 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 40px;
+            }
+            .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            }
+            .metric-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            }
+            .metric-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-color: #89BDC1;
+            }
+            .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7A0019;
+            display: block;
+            margin-bottom: 10px;
+            }
+            .metric-label {
+            color: #575757;
+            font-size: 0.9rem;
+            font-weight: 600;
+            }
+            /* Responsive Design */
+            @media (max-width: 768px) {
+            .framework-diagram {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            }
+            .header h1 {
+            font-size: 2.2rem;
+            }
+            .framework-title h2 {
+            font-size: 2rem;
+            }
+            .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            }
+            .pillar {
+            padding: 30px 20px;
+            }
+            .mission-card, .vision-card {
+            padding: 30px;
+            }
+            }
+            @media (max-width: 480px) {
+            .metrics-grid {
+            grid-template-columns: 1fr;
+            }
+            .header h1 {
+            font-size: 1.8rem;
+            }
+            .container {
+            padding: 20px 15px;
+            }
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T20:22:27.778Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+    </head>
+    <body class="vsc-domain-sitemaster-misq-umn-edu vsc-initialized">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-08-19T14:41:06.984Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div class="container">
+        <header class="header">
+        <h1>About MIS Quarterly</h1>
+        </header>
+        <section class="mission-vision-section">
+        <div class="mission-card">
+        <h2>Editorial Mission</h2>
+        <p>Our editorial mission is the enhancement and communication of knowledge concerning the development of IT-based services, the management of IT resources, and the use, impact, and economics of IT with managerial, organizational, and societal implications.</p>
+        <p>Professional issues affecting the IS field as a whole are also in the purview of the journal.</p>
+        </div>
+        <div class="vision-card">
+        <h2>Vision</h2>
+        <p>MIS Quarterly's vision is to publish the finest information systems scholarship. This was the original vision of the publication's founders in 1977 and continues serving as a unified objective for both the publication's Editor-in-Chief and Editorial Board.</p>
+        <div class="vision-links">
+        <p>For a better understanding of how our vision has evolved over the years:</p>
+        <a href="https://misq.umn.edu/misq/article/40/1/iii/1556/Editor-s-CommentsThe-MIS-Quarterly-Trifecta-Impact?searchresult=1">Opening Editorial by former Editor-in-Chief Arun Rai</a>
+        <a href="/DocumentLibrary/MiscDocs/00_iii_edcomments_v45_1.pdf" target="_blank">Opening Editorial by former Editor-in-Chief Andrew Burton-Jones</a>
+        </div>
+        </div>
+        </section>
+        <section class="framework-section">
+        <div class="framework-title">
+        <h2>Our Framework for Excellence</h2>
+        <p class="framework-subtitle">Meaningful research is driven by real world impact. We have defined 3 core considerations for papers seeking publication in MISQ:</p>
+        </div>
+        <div class="framework-diagram">
+        <div class="pillar">
+        <span class="pillar-number">1</span>
+        <h3>Scholarly Contribution</h3>
+        <p>The research pursues answers that impart significant contribution to the IS discipline.</p>
+        </div>
+        <div class="pillar">
+        <span class="pillar-number">2</span>
+        <h3>Practical Utility</h3>
+        <p>The research enables a broader impact on business and society.</p>
+        </div>
+        <div class="pillar">
+        <span class="pillar-number">3</span>
+        <h3>Aesthetics</h3>
+        <p>The research achieves "powerful simplicity", whether mathematical or qualitative, in its answer.</p>
+        </div>
+        </div>
+        <div class="excellence-formula">
+        <h3>The MISQ Standard</h3>
+        <div class="formula">Scholarly Contribution + Practical Utility + Aesthetics = MISQ Excellence</div>
+        <p>An ideal contribution to MISQ is one that answers the question utilizing all three dimensions.</p>
+        </div>
+        <div class="interdisciplinary-note">
+        <h4>Interdisciplinary Research Welcome</h4>
+        <p>Interdisciplinary papers are also welcomed at MISQ, with the expectation they highlight the role of IS in the formulation of the problem and consequently in the contribution.</p>
+        <p>Authors are encouraged to read the following editorial to understand MISQ expectations on contributions and common errors in formulating IS research problems: <a href="https://misq.umn.edu/misq/article/41/2/iii/334/Editor-s-CommentsAvoiding-Type-III-Errors?searchresult=1">Avoiding Type III Errors: Formulating IS Research Problems that Matter</a>.</p>
+        </div>
+        </section>
+        <section class="impact-metrics">
+        <h3>Our Impact &amp; Recognition</h3>
+        <div class="metrics-grid">
+        <div class="metric-item">
+        <span class="metric-value">6.0</span>
+        <div class="metric-label">2024 Journal Impact Factor</div>
+        </div>
+        <div class="metric-item">
+        <span class="metric-value">5.7</span>
+        <div class="metric-label">Impact Factor w/o Self-Cites</div>
+        </div>
+        <div class="metric-item">
+        <span class="metric-value">11.0</span>
+        <div class="metric-label">Five-Year Impact Factor</div>
+        </div>
+        <div class="metric-item">
+        <span class="metric-value">1.1</span>
+        <div class="metric-label">Immediacy Index</div>
+        </div>
+        <div class="metric-item">
+        <span class="metric-value">15.3</span>
+        <div class="metric-label">Cited Half-Life (Years)</div>
+        </div>
+        <div class="metric-item">
+        <span class="metric-value">3.904</span>
+        <div class="metric-label">Article Influence Score</div>
+        </div>
+        </div>
+        </section>
+        </div>
+        <script>
+        // Add simple hover interactions for pillars
+        document.querySelectorAll('.pillar').forEach(function(pillar) {
+            pillar.addEventListener('click', function() {
+                this.style.transform = 'translateY(-12px) scale(1.02)';
+                setTimeout(function() {
+                    pillar.style.transform = '';
+                }, 300);
+            });
+        });
+
+        // Add hover effects for metric items
+        document.querySelectorAll('.metric-item').forEach(function(item) {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#ffffff';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#f8f9fa';
+            });
+        });
+    </script>
+    </body>
+</html>
