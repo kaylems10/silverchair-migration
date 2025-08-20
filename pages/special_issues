@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" style="--vsc-domain: 'sitemaster.misq.umn.edu';">
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            .special-issue-links a {
+            color: inherit;
+            text-decoration: none;
+            }
+        </style>
+        <title>MISQ Special Issues</title>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+        <link rel="stylesheet" type="text/css" href="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/styles/inject.css" />
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/constants.js"></script>
+    </head>
+    <body style="color: #1a1a1a; line-height: 1.5;" class="vsc-domain-sitemaster-misqrc-silverchair-com vsc-initialized vsc-domain-sitemaster-misq-umn-edu">
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-07-23T21:19:04.676Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-07-23T21:13:06.359Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <div id="vsc-constants-loaded" style="display: none;">Constants loaded at 2025-07-23T21:02:45.898Z</div>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/logger.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/debug-helper.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/dom-utils.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/utils/event-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/storage-manager.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/settings.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/media-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/observers/mutation-observer.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/action-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/core/video-controller.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/controls.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/drag-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/ui/shadow-dom.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/base-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/netflix-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/youtube-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/facebook-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/amazon-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/apple-handler.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/site-handlers/index.js"></script>
+        <script src="chrome-extension://nffaoalbilbmmfgbnbgppjihopabppdk/src/content/inject.js"></script>
+        <div id="vsc-test-indicator" style="display: none;">&nbsp;</div>
+        <!-- Forthcoming Special Issues -->
+        <section>
+        <h2 style="color: #7a0019;">Forthcoming Special Issues</h2>
+        <p>Below are Calls for Papers for forthcoming special issues of MISQ.</p>
+        <div style="margin-top: 1.5em;">
+        <h3 style="margin-bottom: 0.2em;">Registered Reports</h3>
+        <p><a href="/DocumentLibrary/InfoDocs/CFP_SI_RegisteredReports.pdf" style="color: #89bdc1;">Call for Papers</a></p>
+        <p style="margin: 0;">Submission Deadline: September 1, 2023</p>
+        <p style="margin: 0;">Expected Publication: TBD</p>
+        <p style="margin: 0;">Email: <a href="mailto:MISQ-Registered-Report@gmail.com" style="color: #7a0019;">MISQ-Registered-Report@gmail.com</a></p>
+        </div>
+        <div style="margin-top: 1.5em;">
+        <h3 style="margin-bottom: 0.2em;"><a href="http://misq.umn.edu/pages/call_for_papers_the_institutional_press">The Institutional Press in the Digital Age</a></h3>
+        <p><a href="/DocumentLibrary/InfoDocs/CFP_SI_FourthEstate.pdf" style="color: #89bdc1;">Call for Papers</a></p>
+        <p style="margin: 0;">Submission Deadline: December 1, 2024</p>
+        <p style="margin: 0;">Expected Publication: December 2026</p>
+        <p style="margin: 0;">Email: <a href="mailto:MISQ.SI.Fourth.Estate@gmail.com" style="color: #7a0019;">MISQ.SI.Fourth.Estate@gmail.com</a></p>
+        </div>
+        <div style="margin-top: 1.5em;">
+        <h3 style="margin-bottom: 0.2em;"><a href="https://misq.umn.edu/pages/call_for_papers_ai_ia">AI-IA Nexus</a></h3>
+        <p><a href="/DocumentLibrary/InfoDocs/CFP_SI_AIIANexus.pdf" style="color: #89bdc1;">Call for Papers</a></p>
+        <p style="margin: 0;">Submission Deadline: October 31, 2025</p>
+        <p style="margin: 0;">Expected Publication: TBD</p>
+        <p style="margin: 0;">Email: <a href="mailto:misq.aiia.si@gmail.com" style="color: #7a0019;">misq.aiia.si@gmail.com</a></p>
+        </div>
+        </section>
+        <hr style="border: none; border-top: 1px solid #a9a9a9; margin: 3em 0;" />
+        <!-- Previous Special Issues -->
+        <section>
+        <h2 style="color: #7a0019;">Previous Special Issues</h2>
+        <div class="special-issue-links" style="display: flex; flex-wrap: wrap; gap: 2em; margin-top: 1em;">
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/48/4" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/48/4" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/48/4" style="text-decoration: none;">
+        Digital Technologies and Social Justice
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/48/4" style="text-decoration: none;">Vol. 48, Iss. 4</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/47/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/47/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/47/1" style="text-decoration: none;">
+        Building Digital Resilience against Major Shocks
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/47/1" style="text-decoration: none;">Vol. 47, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/45/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/45/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/45/3" style="text-decoration: none;">
+        Managing Artificial Intelligence
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/45/3" style="text-decoration: none;">Vol. 45, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/44/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/44/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/44/1" style="text-decoration: none;">
+        Complexity and Information Systems Research in the Emerging Digital World
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/44/1" style="text-decoration: none;">Vol. 44, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/41/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/41/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/41/1" style="text-decoration: none;">
+        Digital Innovation Management: Reinventing Management Research in a Digital World
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/41/1" style="text-decoration: none;">Vol. 41, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/40/2" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/40/2" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/40/2" style="text-decoration: none;">
+        ICT and Societal Challenges
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/40/2" style="text-decoration: none;">Vol. 40, Iss. 2</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/40/4" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/40/4" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/40/4" style="text-decoration: none;">
+        Transformational Issues of Big Data and Analytics in the Networked Business
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/40/4" style="text-decoration: none;">Vol. 40, Iss. 4</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/39/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/39/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/39/1" style="text-decoration: none;">
+        Service Innovation in the Digital Age
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/39/1" style="text-decoration: none;">Vol. 39, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/38/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/38/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/38/3" style="text-decoration: none;">
+        Sociomateriality of Information Systems Organizing
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/38/3" style="text-decoration: none;">Vol. 38, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/38/4" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/38/4" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/38/4" style="text-decoration: none;">
+        Information Systems for Symbolic Action: Social Media and Beyond
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/38/4" style="text-decoration: none;">Vol. 38, Iss. 4</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/37/2" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/37/2" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/37/2" style="text-decoration: none;">
+        Digital Business Strategy: Toward a Next Generation of Insights
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/37/2" style="text-decoration: none;">Vol. 37, Iss. 2</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/36/4" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/36/4" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/36/4" style="text-decoration: none;">
+        Business Intelligence Research
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/36/4" style="text-decoration: none;">Vol. 36, Iss. 4</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/36/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/36/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/36/1" style="text-decoration: none;">
+        Cocreating IT Value: New Capabilities and Metrics for Multifirm Environments
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/36/1" style="text-decoration: none;">Vol. 36, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/35/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/35/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/35/3" style="text-decoration: none;">
+        New Ventures in Virtual Worlds
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/35/3" style="text-decoration: none;">Vol. 35, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/34/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/34/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/34/3" style="text-decoration: none;">
+        Information Systems Security
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/34/3" style="text-decoration: none;">Vol. 34, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/33/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/33/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/33/3" style="text-decoration: none;">
+        Information Systems Offshoring, Part II
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/33/3" style="text-decoration: none;">Vol. 33, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/32/2" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/32/2" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/32/2" style="text-decoration: none;">
+        Information Systems Offshoring
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/32/2" style="text-decoration: none;">Vol. 32, Iss. 2</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/30/SI" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/30/SI" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/30/SI" style="text-decoration: none;">
+        Standard Making
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/30/SI" style="text-decoration: none;">Vol. 30, Iss. SI</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/29/2" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/29/2" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/29/2" style="text-decoration: none;">
+        Information Technologies and Knowledge Management
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/29/2" style="text-decoration: none;">Vol. 29, Iss. 2</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/28/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/28/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/28/3" style="text-decoration: none;">
+        Action Research in Information Systems
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/28/3" style="text-decoration: none;">Vol. 28, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/27/2" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/27/2" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/27/2" style="text-decoration: none;">
+        Redefining the Organizational Roles of Informational Technology in the Information Age
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/27/2" style="text-decoration: none;">Vol. 27, Iss. 2</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/26/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/26/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/26/3" style="text-decoration: none;">
+        Redefining the Organizational Roles of Informational Technology in the Information Age
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/26/3" style="text-decoration: none;">Vol. 26, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/24/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/24/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/24/3" style="text-decoration: none;">
+        Intensive Research in Information Systems
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/24/3" style="text-decoration: none;">Vol. 24, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/23/1" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/23/1" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/23/1" style="text-decoration: none;">
+        Intensive Research in Information Systems
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/23/1" style="text-decoration: none;">Vol. 23, Iss. 1</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/19/3" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/19/3" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/19/3" style="text-decoration: none;">
+        IS Curricula and Pedagogy
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/19/3" style="text-decoration: none;">Vol. 19, Iss. 3</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/12/4" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/12/4" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/12/4" style="text-decoration: none;">
+        Group Decision Support Systems (GDSS)
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/12/4" style="text-decoration: none;">Vol. 12, Iss. 4</a></div>
+        </div>
+        </div>
+        <div style="flex: 1 1 300px;">
+        <a href="https://misq.umn.edu/misq/issue/06/SI" style="text-decoration: none;">
+        </a>
+        <div><a href="https://misq.umn.edu/misq/issue/06/SI" style="text-decoration: none;">
+        </a>
+        <div style="color: #1a1a1a; font-weight: 600; font-size: 1em;"><a href="https://misq.umn.edu/misq/issue/06/SI" style="text-decoration: none;">
+        Society for Management Information Systems 1982 Research Program
+        </a></div>
+        <div style="color: #575757; font-size: 0.9em;"><a href="https://misq.umn.edu/misq/issue/06/SI" style="text-decoration: none;">Vol. 06, Iss. SI</a></div>
+        </div>
+        </div>
+        </div>
+        </section>
+    </body>
+</html>
