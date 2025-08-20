@@ -803,24 +803,28 @@
         <h1>Former Editors-in-Chief</h1>
         <div class="editors-wrap">
         <div class="editors-grid">
+         <!-- ABJ -->
+       
         <div class="editor-card">
         <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
-        <img src="/ImageLibrary/Editors-in-Chief/AndrewBurton-Jones.jpg" alt="Andrew Burton-Jones, Editor-in-Chief 2021-2023 /&gt;
-        &lt;/a&gt;
-        &lt;div class=" />Andrew Burton-Jones</a></div>
-        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
+        <img src="/ImageLibrary/Editors-in-Chief/AndrewBurton-Jones.jpg" alt="Andrew Burton-Jones, Editor-in-Chief 2021-2023"/>
         </a>
-        <div class="editor-years"><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">2021 - 2023</a></div>
-        </div>
-        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
-        </a>
-        <div class="editor-card"><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Andrew Burton-Jones'}">
-        </a><a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Arun Rai'}">
+        <div class="editor-name">Andrew Burton-Jones</div>
+        <div class="editor-years">2021 - 2023</div>
+         </div>
+        
+       
+       
+       <!-- Arun -->
+        <div class="editor-card">
+        <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Arun Rai'}">
         <img src="/ImageLibrary/Editors-in-Chief/ArunRai.jpg" alt="Arun Rai, Editor-in-Chief 2016–2020" />
         </a>
         <div class="editor-name">Arun Rai</div>
         <div class="editor-years">2016 - 2020</div>
         </div>
+       
+       <!-- Paulo -->
         <div class="editor-card">
         <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Paulo B. Goes'}">
         <img src="/ImageLibrary/Editors-in-Chief/PauloGoes.jpg" alt="Paulo B. Goes, Editor-in-Chief 2013–2015" />
@@ -828,6 +832,9 @@
         <div class="editor-name">Paulo B. Goes</div>
         <div class="editor-years">2013 - 2015</div>
         </div>
+      
+      
+      <!-- Detmar -->
         <div class="editor-card">
         <a href="https://misq.umn.edu/search-results?f_ArticleTypeDisplayName=Editorial&amp;fl_SiteID=1&amp;page=1&amp;qb={'Authors1':'Detmar W. Straub'}">
         <img src="/ImageLibrary/Editors-in-Chief/DetmarStraub.jpg" alt="Detmar W. Straub, Editor-in-Chief 2008–2012" />
