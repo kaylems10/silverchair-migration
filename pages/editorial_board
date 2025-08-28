@@ -479,7 +479,7 @@
         <div class="editor-email"><a href="mailto:mchau@business.hku.hk">mchau@business.hku.hk</a></div>
         <div class="collapsible-content">
         <div><strong>Topic Expertise:</strong> machine learning models, predictive analytics models, language models, financial technologies, social media, electronic commerce, information security</div>
-        <div><strong>Methods Expertise:</strong> computational design science</div>
+        <div><strong>Methods Expertise:</strong> design science, machine learning, experiments, secondary data analysis</div>
         <a href="http://www.business.hku.hk/~mchau/">Personal website</a>
         </div>
         </div>
@@ -1005,7 +1005,7 @@
         <div class="collapsible-content">
         <div><strong>Topic Expertise:</strong> behavioral cybersecurity, privacy, human-computer interaction, IT adoption, IT security</div>
         <div><strong>Methods Expertise:</strong> quantitative, survey, experimental design, mixed methods</div>
-        <a href="https://culverhouse.ua.edu/news/directory/allen-johnston/">Personal website</a>
+        <a href="https://culverhouse.ua.edu/people/allen-johnston/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -1276,8 +1276,8 @@
         <div class="editor-institution">Georgia Tech</div>
         <div class="editor-email"><a href="mailto:lizhen.xu@scheller.gatech.edu">lizhen.xu@scheller.gatech.edu</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> online and mobile advertising, consumer analytics, economics of AI, consumer privacy, platform economics</div>
-        <div><strong>Methods Expertise:</strong> analytical modeling, game-theoretic modeling, empirical research, probability models, Bayesian models, machine learning</div>
+        <div><strong>Topic Expertise:</strong> online and mobile advertising, consumer analytics, economics of AI, business models, consumer privacy, platform economics, user-generated content</div>
+        <div><strong>Methods Expertise:</strong> analytical modeling, game-theoretic modeling, empirical research, quantitative probability models, structural models, Bayesian methods, machine learning</div>
         <a href="http://www.scheller.gatech.edu/xu">Personal website</a>
         </div>
         </div>
@@ -1307,19 +1307,7 @@
         <a href="https://dennyyin.com/">Personal website</a>
         </div>
         </div>
-        <div class="editor-card">
-        <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Yingjie  Zhang
-        </button>
-        <div class="editor-meta">Jan 2025 - Dec 2026</div>
-        <div class="editor-institution">Peking University</div>
-        <div class="editor-email"><a href="mailto:yingjiezhang@gsm.pku.edu.cn">yingjiezhang@gsm.pku.edu.cn</a></div>
-        <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> human-AI interaction, economic impacts of new technologies</div>
-        <div><strong>Methods Expertise:</strong> econometrics, structural modeling, machine learning, field experiment</div>
-        <a href="https://sites.google.com/view/yingjiezhang/">Personal website</a>
-        </div>
-        </div>
+        
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Kunpeng Zhang
@@ -1331,6 +1319,19 @@
         <div><strong>Topic Expertise:</strong> AI in business, machine learning methods</div>
         <div><strong>Methods Expertise:</strong> large language models, representation learning, predictive modeling</div>
         <a href="https://kpzhang.github.io/">Personal website</a>
+        </div>
+        </div>
+<div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Yingjie  Zhang
+        </button>
+        <div class="editor-meta">Jan 2025 - Dec 2026</div>
+        <div class="editor-institution">Peking University</div>
+        <div class="editor-email"><a href="mailto:yingjiezhang@gsm.pku.edu.cn">yingjiezhang@gsm.pku.edu.cn</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-AI interaction, economic impacts of new technologies</div>
+        <div><strong>Methods Expertise:</strong> econometrics, structural modeling, machine learning, field experiment</div>
+        <a href="https://sites.google.com/view/yingjiezhang/">Personal website</a>
         </div>
         </div>
         </div>
