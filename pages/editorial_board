@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="--vsc-domain: 'sitemaster.misq.umn.edu';">
     <head>
         <meta charset="UTF-8" />
         <title>Editorial Board</title>
@@ -204,7 +204,20 @@
             }
             }
         </style>
+        
     </head>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.collapsible-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    let content = this.parentElement.querySelector('.collapsible-content');
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('active');
+                    this.setAttribute('aria-expanded', !expanded);
+                });
+            });
+        });
+    </script>
         <div class="container">
         <h1>Editorial Board</h1>
         <div class="section">
@@ -242,10 +255,15 @@
         <div class="section">
         <h2>Policy Committee</h2>
         <div class="office-row">
+<div class="office-member">
+        <span class="office-label">Natalia Levina</span><br />
+        New York University<br />
+        <em>AIS Representative – Committee Chair</em>
+        </div>
         <div class="office-member">
         <span class="office-label">Gautam Ray</span><br />
         University of Minnesota<br />
-        <em>Committee Chair</em>
+        <em>UMN Representative</em>
         </div>
         <div class="office-member">
         <span class="office-label">Alok Gupta</span><br />
@@ -258,11 +276,6 @@
         <em>AIS Representative – VP of Publications</em>
         </div>
         <div class="office-member">
-        <span class="office-label">Natalia Levina</span><br />
-        New York University<br />
-        <em>AIS Representative – At-large</em>
-        </div>
-        <div class="office-member">
         <span class="office-label">Susan Brown</span><br />
         University of Arizona<br />
         <em>MISQ Editor-in-Chief</em>
@@ -270,23 +283,10 @@
         </div>
         </div>
         <hr class="misq-divider" />
-<a id="senior-editors"></a>
+        <a id="senior-editors"></a>
         <div class="section">
         <h2>Senior Editors</h2>
         <div class="editors-grid">
-        <div class="editor-card">
-        <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Nicholas Berente
-        </button>
-        <div class="editor-meta">June 2022 - Dec 2025</div>
-        <div class="editor-institution">University of Notre Dame</div>
-        <div class="editor-email"><a href="mailto:nberente@nd.edu">nberente@nd.edu</a></div>
-        <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> digital innovation, managing AI, organizational transformation, technology development and implementation, open-source software</div>
-        <div><strong>Methods Expertise:</strong> qualitative, computationally intensive research, mixed methods, meta-analyses, conceptual or review work</div>
-        <a href="https://mendoza.nd.edu/mendoza-directory/profile/nicholas-berente/">Personal website</a>
-        </div>
-        </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Michelle Carter
@@ -382,7 +382,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Jungpil  Hahn
         </button>
-        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-meta">Jan 2023 - Dec 2028</div>
         <div class="editor-institution">National University of Singapore</div>
         <div class="editor-email"><a href="mailto:jungpil@nus.edu.sg">jungpil@nus.edu.sg</a></div>
         <div class="collapsible-content">
@@ -456,17 +456,17 @@
         <a href="https://www.business.uconn.edu/person/xinxin-li/">Personal website</a>
         </div>
         </div>
-        <div class="editor-card">
+ <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Likoebe Maruping
+        <span class="arrow">▶</span> Huigang Liang
         </button>
-        <div class="editor-meta">Jan 2020 - Dec 2025</div>
-        <div class="editor-institution">Georgia State University</div>
-        <div class="editor-email"><a href="mailto:lmaruping@gmail.com">lmaruping@gmail.com</a></div>
+        <div class="editor-meta">June 2026 - Dec 2028</div>
+        <div class="editor-institution">University of Memphis</div>
+        <div class="editor-email"><a href="mailto:hliang1@memphis.edu">hliang1@memphis.edu</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> digitally-enabled collective innovation, digital transformation, digital entrepreneurship</div>
-        <div><strong>Methods Expertise:</strong> econometric analysis, social network analysis, experimental design, surveys, qualitative case studies, mixed methods</div>
-        <a href="https://lmaruping.com/">Personal website</a>
+        <div><strong>Topic Expertise:</strong> AI, cybersecurity, healthcare informatics</div>
+        <div><strong>Methods Expertise:</strong> theory-driven, data-driven</div>
+        <a href="https://www.memphis.edu/mis/faculty_research/faculty-directory/liang-huigang.php">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -493,6 +493,19 @@
         <div><strong>Topic Expertise:</strong> artificial intelligence, digital innovation, digital transformation, digital entrepreneurship, digital sustainability, systems development</div>
         <div><strong>Methods Expertise:</strong> qualitative methods, quantitative behavioral methods, mixed methods, design methods, simulation</div>
         <a href="http://www.janrecker.com/">Personal website</a>
+        </div>
+        </div>
+<div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Matti Rossi
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2028</div>
+        <div class="editor-institution">Aalto University</div>
+        <div class="editor-email"><a href="mailto:matti.rossi@aalto.fi">matti.rossi@aalto.fi</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> information systems design, ethical design, AI implementation, digital transformation, dark sides of digitalization</div>
+        <div><strong>Methods Expertise:</strong> design science, qualitative methods, multi method research</div>
+        <a href="https://research.aalto.fi/en/persons/matti-rossi/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -590,7 +603,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Ofir Turel
         </button>
-        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-meta">Jan 2023 - Dec 2028</div>
         <div class="editor-institution">University of Melbourne</div>
         <div class="editor-email"><a href="mailto:oturel@unimelb.edu.au">oturel@unimelb.edu.au</a></div>
         <div class="collapsible-content">
@@ -630,7 +643,7 @@
         <span class="arrow">▶</span> Han Zhang
         </button>
         <div class="editor-meta">Jan 2021 - Dec 2026</div>
-        <div class="editor-institution">Hong Kong Baptist University &amp; Georgia Institute of Technology</div>
+        <div class="editor-institution">Georgia Institute of Technology</div>
         <div class="editor-email"><a href="mailto:han.zhang@scheller.gatech.edu">han.zhang@scheller.gatech.edu</a></div>
         <div class="collapsible-content">
         <div><strong>Topic Expertise:</strong> online trust, social media, online communities, consumer satisfaction, human-computer interaction</div>
@@ -642,7 +655,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Xiaoquan (Michael) Zhang
         </button>
-        <div class="editor-meta">Jan 2023 - Dec 2025</div>
+        <div class="editor-meta">Jan 2023 - Dec 2026</div>
         <div class="editor-institution">Chinese University of Hong Kong</div>
         <div class="editor-email"><a href="mailto:zhang@cuhk.edu.hk">zhang@cuhk.edu.hk</a></div>
         <div class="collapsible-content">
@@ -666,7 +679,7 @@
         </div>
         </div>
         <hr class="misq-divider" />
-<a id="associate-editors"></a>
+        <a id="associate-editors"></a>
         <div class="section">
         <h2>Associate Editors</h2>
         <div class="editors-grid">
@@ -674,7 +687,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Margunn Aanestad
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">University of Oslo</div>
         <div class="editor-email"><a href="mailto:margunn@ifi.uio.no">margunn@ifi.uio.no</a></div>
         <div class="collapsible-content">
@@ -687,7 +700,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Hilal Atasoy
         </button>
-        <div class="editor-meta">July 2023 - Dec 2026</div>
+        <div class="editor-meta">July 2023 - Dec 2027</div>
         <div class="editor-institution">Rutgers University</div>
         <div class="editor-email"><a href="mailto:hilal.atasoy@rutgers.edu">hilal.atasoy@rutgers.edu</a></div>
         <div class="collapsible-content">
@@ -707,6 +720,19 @@
         <div><strong>Topic Expertise:</strong> digital transformation, digital innovation, organizational change, societal impacts of digitalization</div>
         <div><strong>Methods Expertise:</strong> design science, ethnography, mixed methods</div>
         <a href="https://smith.queensu.ca/faculty_and_research/faculty_list/abayomi-baiyere.php">Personal website</a>
+        </div>
+        </div>
+<div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Leona Chandra Kruse
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">University of Agder</div>
+        <div class="editor-email"><a href="mailto:leona.chandra@uia.no">leona.chandra@uia.no</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-AI interaction and collaboration, digital transformation and innovation, interdisciplinary research, human flourishing, hybrid user experience</div>
+        <div><strong>Methods Expertise:</strong> design science research, problematization, mixed methods, case studies, experimental design, conceptual work</div>
+        <a href="https://www.uia.no/english/about-uia/employees/leonac/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -737,7 +763,20 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Katherine Feng
+        <span class="arrow">▶</span> Ben Choi
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">Nanyang Technological University</div>
+        <div class="editor-email"><a href="mailto:benchoi@ntu.edu.sg">benchoi@ntu.edu.sg</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> human-computer/AI interactions, information privacy, human cognition, and impact of human performance on business and society</div>
+        <div><strong>Methods Expertise:</strong> experimental, surveys, NeuroIS methods</div>
+        <a href="https://dr.ntu.edu.sg/entities/person/Ben-Choi">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Yue (Katherine) Feng
         </button>
         <div class="editor-meta">Jan 2025 - Dec 2026</div>
         <div class="editor-institution">Hong Kong Polytechnic University</div>
@@ -752,7 +791,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Yong Ge
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">University of Arizona</div>
         <div class="editor-email"><a href="mailto:yongge@arizona.edu">yongge@arizona.edu</a></div>
         <div class="collapsible-content">
@@ -774,17 +813,17 @@
         <a href="http://www.tomergeva.net/">Personal website</a>
         </div>
         </div>
-        <div class="editor-card">
+         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Cheng Suang  Heng
+        <span class="arrow">▶</span> Dominik Gutt
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">National University of Singapore</div>
-        <div class="editor-email"><a href="mailto:hengcs@comp.nus.edu.sg">hengcs@comp.nus.edu.sg</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">RWTH Aachen University</div>
+        <div class="editor-email"><a href="mailto:dominik.gutt@rwth-aachen.de">dominik.gutt@rwth-aachen.de</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> organizational use of IT, digital platforms, sharing economy, digital innovation, social computing</div>
-        <div><strong>Methods Expertise:</strong> experiments, surveys, archival data analysis, case studies, multi-methods</div>
-        <a href="https://www.comp.nus.edu.sg/disa/bio/hengcs/">Personal website</a>
+        <div><strong>Topic Expertise:</strong> user-generated content, Web3, AI usage, design of online platforms</div>
+        <div><strong>Methods Expertise:</strong> econometric methods with secondary data, identification in observational studies, natural experiments</div>
+        <a href="https://sites.google.com/view/dominik-gutt/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -839,19 +878,7 @@
         <a href="https://culverhouse.ua.edu/people/allen-johnston/">Personal website</a>
         </div>
         </div>
-        <div class="editor-card">
-        <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Hee-Woong Kim
-        </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">Yonsei University</div>
-        <div class="editor-email"><a href="mailto:kimhw@yonsei.ac.kr">kimhw@yonsei.ac.kr</a></div>
-        <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> AI in business, AI model development and applications, IS infusion, digital business models, dark side of IS use (cyber bullying, hate speech, deep fake)</div>
-        <div><strong>Methods Expertise:</strong> machine learning, design science, behavioral method, multi-methods</div>
-        <a href="https://dslab.yonsei.ac.kr/cv">Personal website</a>
-        </div>
-        </div>
+        
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Seung Hyun Kim
@@ -869,7 +896,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Brent Kitchens
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">University of Virginia</div>
         <div class="editor-email"><a href="mailto:bmk2a@virginia.edu">bmk2a@virginia.edu</a></div>
         <div class="collapsible-content">
@@ -880,35 +907,61 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Nishtha Langer
+        <span class="arrow">▶</span> Harris Kyriakou
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">Rensselaer Polytechnic Institute</div>
-        <div class="editor-email"><a href="mailto:nishthal@alumni.cmu.edu">nishthal@alumni.cmu.edu</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">ESSEC Business School</div>
+        <div class="editor-email"><a href="mailto:kyriakou@essec.edu">kyriakou@essec.edu</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> IT labor, IT capital, value of social media platforms</div>
-        <div><strong>Methods Expertise:</strong> econometric analysis, archival quantitative data, field experiments, lab experiments, mixed methods</div>
-        <a href="https://faculty.rpi.edu/nishtha-langer">Personal website</a>
+        <div><strong>Topic Expertise:</strong> artificial intelligence, digital innovation, algorithmic governance, organizational processes</div>
+        <div><strong>Methods Expertise:</strong> quantitative research, computational, machine learning, econometric approaches</div>
+        <a href="https://faculty.essec.edu/en/cv/kyriakou-harris/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Jingjing Li
+        <span class="arrow">▶</span> Carmen Leong
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">University of Virginia</div>
-        <div class="editor-email"><a href="mailto:jl9rf@virginia.edu">jl9rf@virginia.edu</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">UNSW Sydney</div>
+        <div class="editor-email"><a href="mailto:Carmen.leong@unsw.edu.au">Carmen.leong@unsw.edu.au</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> artificial intelligence, big data analytics, human-AI collaboration, healthcare, marketing, public policy</div>
-        <div><strong>Methods Expertise:</strong> natural language processing, text mining, machine learning, econometrics, lab and field experiments, geo-analytics, mixed methods</div>
-        <a href="https://sites.google.com/view/jingjingli">Personal website</a>
+        <div><strong>Topic Expertise:</strong> digital empowerment,  innovative digital business models, digital platforms and ecosystems, societal and community impacts of digitalisation</div>
+        <div><strong>Methods Expertise:</strong> qualitative methods, case study, grounded theory, process theory building, action design research (ADR), interpretive methods, longitudinal field studies</div>
+        <a href="https://www.unsw.edu.au/staff/carmen-leong">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Siyuan (Seth) Li
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">William & Mary</div>
+        <div class="editor-email"><a href="mailto:seth.li@mason.wm.edu">seth.li@mason.wm.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> online consumer behavior, information diffusion in online social networks, human–computer interaction</div>
+        <div><strong>Methods Expertise:</strong> quantitative research methods, experiments, surveys, quantitative techniques</div>
+        <a href="https://mason.wm.edu/faculty/directory/li-s.php">Personal website</a>
+        </div>
+        </div>
+         <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Zhepeng (Lionel) Li
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">The University of Hong Kong</div>
+        <div class="editor-email"><a href="mailto:zpli@hku.hk">zpli@hku.hk</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> novel machine learning (ML), artificial intelligent (AI) systems, algorithms</div>
+        <div><strong>Methods Expertise:</strong> design science, computational</div>
+        <a href="https://www.hkubs.hku.hk/people/zhepeng-li/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Zhijie Lin
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">Tsinghua University</div>
         <div class="editor-email"><a href="mailto:linzhj@sem.tsinghua.edu.cn">linzhj@sem.tsinghua.edu.cn</a></div>
         <div class="collapsible-content">
@@ -947,7 +1000,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Sabine Matook
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">University of Queensland</div>
         <div class="editor-email"><a href="mailto:s.matook@business.uq.edu.au">s.matook@business.uq.edu.au</a></div>
         <div class="collapsible-content">
@@ -958,15 +1011,28 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> YoungKi Park
+        <span class="arrow">▶</span> Mareike Möhlmann
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">George Washington University</div>
-        <div class="editor-email"><a href="mailto:ykpark@gwu.edu">ykpark@gwu.edu</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">Bentley University</div>
+        <div class="editor-email"><a href="mailto:mmoehlmann@bentley.edu">mmoehlmann@bentley.edu</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> IT organizational capabilities, IT outsourcing, enterprise architecture, IT governance</div>
-        <div><strong>Methods Expertise:</strong> quantitative, qualitative, qualitative comparative analysis (QCA), surveys, structural equation modeling, interviews, case studies</div>
-        <a href="https://business.gwu.edu/youngki-park">Personal website</a>
+        <div><strong>Topic Expertise:</strong> human-AI interaction, algorithmic management, digital innovation, digital platform ecosystems</div>
+        <div><strong>Methods Expertise:</strong> theory development, qualitative, case studies, interpretive approaches, ethnographic work</div>
+        <a href="https://www.mareikemohlmann.com/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Dandan Qiao
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">National University of Singapore</div>
+        <div class="editor-email"><a href="mailto:qiaodd@comp.nus.edu.sg">qiaodd@comp.nus.edu.sg</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> digital platform design, online environments, large language models, e-commerce analytics</div>
+        <div><strong>Methods Expertise:</strong> computational, econometric analysis, algorithm design</div>
+        <a href="https://www.comp.nus.edu.sg/disa/people/qiaodd/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -987,7 +1053,7 @@
         <span class="arrow">▶</span> Rene Riedl
         </button>
         <div class="editor-meta">Jan 2025 - Dec 2026</div>
-        <div class="editor-institution">University of Applied Sciences Upper Austria &amp; University of Linz</div>
+        <div class="editor-institution">University of Applied Sciences Upper Austria &amp; Johannes Kepler University Linz</div>
         <div class="editor-email"><a href="mailto:rene.riedl@fh-steyr.at">rene.riedl@fh-steyr.at</a></div>
         <div class="collapsible-content">
         <div><strong>Topic Expertise:</strong> digitization and digital transformation, trust in a digital world, technostress, human-computer interaction</div>
@@ -1023,6 +1089,19 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
+        <span class="arrow">▶</span> Aaron Schecter
+        </button>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">University of Georgia</div>
+        <div class="editor-email"><a href="mailto:aschecter@uga.edu">aschecter@uga.edu</a></div>
+        <div class="collapsible-content">
+        <div><strong>Topic Expertise:</strong> artificial intelligence, machine learning, open-source software, organizational behavior, online communities</div>
+        <div><strong>Methods Expertise:</strong> quantitative, computational, lab and field experiments, econometric analyses, machine learning methods, simulation modeling</div>
+        <a href="https://www.terry.uga.edu/directory/aaron-schecter/">Personal website</a>
+        </div>
+        </div>
+        <div class="editor-card">
+        <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Maha  Shaikh
         </button>
         <div class="editor-meta">Mar 2021 - Dec 2026</div>
@@ -1038,7 +1117,7 @@
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Vilma Todri
         </button>
-        <div class="editor-meta">July 2023 - Dec 2025</div>
+        <div class="editor-meta">July 2023 - Dec 2026</div>
         <div class="editor-institution">Emory University</div>
         <div class="editor-email"><a href="mailto:vilma.todri@emory.edu">vilma.todri@emory.edu</a></div>
         <div class="collapsible-content">
@@ -1049,22 +1128,22 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Ping Wang
+        <span class="arrow">▶</span> Yu Tong
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">University of Maryland, College Park</div>
-        <div class="editor-email"><a href="mailto:pwang@umd.edu">pwang@umd.edu</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">Zhejiang University</div>
+        <div class="editor-email"><a href="mailto:tong_yu@zju.edu.cn">tong_yu@zju.edu.cn</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> artificial intelligence, blockchain, quantum computing, digital innovation, platforms &amp; ecosystems, resilience &amp; sustainability, technology popularity, trends, &amp; adoption</div>
-        <div><strong>Methods Expertise:</strong> case study, survey, structural equation modeling, social network analysis, panel data analysis, discourse analysis, text mining</div>
-        <a href="https://drpingwang.com/">Personal website</a>
+        <div><strong>Topic Expertise:</strong> health IT, digital-enabled use behaviors, digital innovation</div>
+        <div><strong>Methods Expertise:</strong> quantitative, multi-methods</div>
+        <a href="https://person.zju.edu.cn/en/tongyu">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Markus Weinmann
         </button>
-        <div class="editor-meta">Jan 2024 - Dec 2025</div>
+        <div class="editor-meta">Jan 2024 - Dec 2027</div>
         <div class="editor-institution">University of Cologne</div>
         <div class="editor-email"><a href="mailto:weinmann@wiso.uni-koeln.de">weinmann@wiso.uni-koeln.de</a></div>
         <div class="collapsible-content">
@@ -1114,15 +1193,15 @@
         </div>
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
-        <span class="arrow">▶</span> Cheng Yi
+        <span class="arrow">▶</span> Mingwen Yang
         </button>
-        <div class="editor-meta">Jan 2022 - Dec 2025</div>
-        <div class="editor-institution">Tsinghua University</div>
-        <div class="editor-email"><a href="mailto:yich@sem.tsinghua.edu.cn">yich@sem.tsinghua.edu.cn</a></div>
+        <div class="editor-meta">Jan 2026 - Dec 2027</div>
+        <div class="editor-institution">University of Washington </div>
+        <div class="editor-email"><a href="mailto:mingweny@uw.edu">mingweny@uw.edu</a></div>
         <div class="collapsible-content">
-        <div><strong>Topic Expertise:</strong> human-AI interaction, extended reality, digital transformation, e-commerce, digital learning</div>
-        <div><strong>Methods Expertise:</strong> experiments</div>
-        <a href="https://www.sem.tsinghua.edu.cn/en/info/1246/7153.htm">Personal website</a>
+        <div><strong>Topic Expertise:</strong> fintech, platform economy, cybersecurity, artificial intelligence</div>
+        <div><strong>Methods Expertise:</strong> analytical modeling, empirical analysis, machine learning</div>
+        <a href="https://foster.uw.edu/faculty-research/directory/mingwen-yang/">Personal website</a>
         </div>
         </div>
         <div class="editor-card">
@@ -1138,7 +1217,6 @@
         <a href="https://dennyyin.com/">Personal website</a>
         </div>
         </div>
-        
         <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Kunpeng Zhang
@@ -1152,7 +1230,7 @@
         <a href="https://kpzhang.github.io/">Personal website</a>
         </div>
         </div>
-<div class="editor-card">
+        <div class="editor-card">
         <button class="collapsible-btn" aria-expanded="false">
         <span class="arrow">▶</span> Yingjie  Zhang
         </button>
