@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" style="--vsc-domain: 'sitemaster.misq.umn.edu';">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MISQ Author Submission Guidelines</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            body {
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #ffffff;
+            }
+            .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            }
+            .header {
+            text-align: center;
+            margin-bottom: 50px;
+            }
+            .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #7A0019;
+            margin-bottom: 15px;
+            }
+            .header p {
+            font-size: 1.2rem;
+            color: #575757;
+            max-width: 600px;
+            margin: 0 auto;
+            }
+            .journey-step {
+            background: white;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            }
+            .journey-step:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            .step-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            }
+            .step-header:hover {
+            background: #e9ecef;
+            }
+            .step-header.active {
+            background: #89BDC1;
+            color: white;
+            }
+            .step-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            }
+            .step-number {
+            width: 40px;
+            height: 40px;
+            background: #303030;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            }
+            .step-header.active .step-number {
+            background: white;
+            color: #89BDC1;
+            }
+            .step-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #303030;
+            }
+            .step-header.active .step-name {
+            color: white;
+            }
+            .step-arrow {
+            font-size: 1.5rem;
+            color: #575757;
+            transition: transform 0.3s ease;
+            }
+            .step-header.active .step-arrow {
+            color: white;
+            transform: rotate(180deg);
+            }
+            .step-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            }
+            .step-content.active {
+            max-height: 2000px;
+            }
+            .step-inner {
+            padding: 30px;
+            }
+            .subsection {
+            margin-bottom: 30px;
+            }
+            .subsection h4 {
+            color: #303030;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            }
+            .subsection p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: #1A1A1A;
+            }
+            .subsection ul, .subsection ol {
+            margin: 15px 0 20px 25px;
+            }
+            .subsection li {
+            margin-bottom: 8px;
+            color: #1A1A1A;
+            }
+            .highlight {
+            background: #fffbf0;
+            border-left: 4px solid #FFCC33;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            }
+            .highlight strong {
+            color: #303030;
+            }
+            .info {
+            background: #f0f8f9;
+            border-left: 4px solid #89BDC1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            }
+            .info strong {
+            color: #303030;
+            }
+            .warning {
+            background: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            }
+            .warning strong {
+            color: #dc3545;
+            }
+            .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+            }
+            .category-card {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            }
+            .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #89BDC1;
+            }
+            .category-card.selected {
+            border-color: #303030;
+            background: rgba(48, 48, 48, 0.05);
+            }
+            .category-card h5 {
+            color: #303030;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            }
+            .category-card p {
+            color: #575757;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            }
+            .page-limit {
+            background: #89BDC1;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            }
+            .code-block {
+            background: #f1f3f4;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            }
+            .code-block strong {
+            color: #303030;
+            }
+            .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            }
+            .resource-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+            justify-content: center;
+            }
+            .template-btn {
+            background: #89BDC1;
+            color: white;
+            border-color: #89BDC1;
+            }
+            .template-btn:hover {
+            background: white;
+            color: #89BDC1;
+            border-color: #89BDC1;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(137, 189, 193, 0.3);
+            }
+            .resource-btn {
+            background: #FFCC33;
+            color: #1A1A1A;
+            border-color: #FFCC33;
+            }
+            .resource-btn:hover {
+            background: white;
+            color: #1A1A1A;
+            border-color: #FFCC33;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 204, 51, 0.3);
+            }
+            ol li strong, ul li strong {
+            color: #303030;
+            }
+            .completion-message {
+            background: linear-gradient(135deg, #28a745, #20c997) !important;
+            color: white !important;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            }
+            .completion-message h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white !important;
+            font-weight: 700;
+            }
+            .completion-message p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            color: white !important;
+            font-weight: 500;
+            }
+            /* Responsive Design */
+            @media (max-width: 768px) {
+            .container {
+            padding: 20px 15px;
+            }
+            .header h1 {
+            font-size: 2rem;
+            }
+            .step-header {
+            padding: 20px;
+            }
+            .step-inner {
+            padding: 20px;
+            }
+            .step-name {
+            font-size: 1.2rem;
+            }
+            .category-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            }
+            .category-card {
+            padding: 20px;
+            }
+            }
+            @media (max-width: 480px) {
+            .step-title {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            }
+            .step-number {
+            width: 35px;
+            height: 35px;
+            font-size: 1rem;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="header">
+        <h1>Author Submission Guidelines</h1>
+        <p>A comprehensive step-by-step guide to successful manuscript submission. Click each section below to expand and explore the complete submission journey.</p>
+        </div>
+        <!-- Step 1: Determining Eligibility -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">1</div>
+        <div class="step-name">Determining Eligibility</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="subsection">
+        <h4>Must Follow MIS Quarterly Mission</h4>
+        <p>Papers submitted to MIS Quarterly should relate to the journal's mission of enhancement and communication of knowledge concerning:</p>
+        <ul>
+            <li>Development of IT-based services</li>
+            <li>Management of IT resources</li>
+            <li>Use, impact, and economics of IT with managerial, organizational, and societal implications</li>
+            <li>Professional issues affecting the IS field as a whole</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>Must Address Diverse Readership</h4>
+        <p>In order to cater to our wide-ranging readership, papers submitted should seek to address as broad of audience as possible:</p>
+        <ul>
+            <li>Specialized terms should be defined clearly and briefly</li>
+            <li>Technical material should be included in appendices where possible</li>
+            <li>Authors should frame technical material in a way that is easy to grasp</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>No Formal Pre-submission Feedback</h4>
+        <p>MISQ does not offer formal pre-submission feedback. Authors may personally seek feedback from editorial board members, as they would informally approach any scholar. Board members reserve the right to decline, and such feedback would not be part of the formal review process. A board member who engages in informal feedback also reserves the right to recuse themselves from the formal review process. Papers have entered the formal review process once submitted to Manuscript Central.</p>
+        </div>
+        <div class="subsection">
+        <h4>Must Understand &amp; Meet Journal Standards</h4>
+        <p>Before submitting, authors should have a clear understanding of MISQ's expected quality standards and relevant submission categories. We highly recommend authors review previous journal issues to ensure clarity.</p>
+        </div>
+        <div class="subsection">
+        <h4>Avoid Submitting Premature Papers</h4>
+        <p>Submitting underdeveloped papers can greatly increase the publishing time and risks outright rejection. It is essential authors read &amp; follow MISQ's submission criteria provided on the website and seek out third-person input from experienced colleagues to ensure a seamless and efficient review process.</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Step 2: Selecting Category -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">2</div>
+        <div class="step-name">Selecting a Category</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="highlight">
+        <strong>Important:</strong> Maximum lengths include ALL content: text, tables, figures, references, and appendices. Submissions exceeding limits may be returned or rejected.<br />
+        <br />
+        <strong>Supplementary Materials:</strong> Generally discouraged. All primary evidence and main claims must exist within the manuscript page limits. Manuscripts should not reference materials outside of the page limits as they will not be reviewed.
+        </div>
+        <div class="warning">
+        <strong style="color: #dc3545;">⚠️ Submissions or revisions that exceed the category length will be returned to the authors, creating potential delays and increasing the time of the review process.</strong>
+        </div>
+        <div class="category-grid">
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>1. Research Article <span class="page-limit">55 pages max</span></h5>
+        <p>Primary research category for original contributions. Must present new theories, test existing theories, or expand understanding of digital phenomena with substantial evidence.</p>
+        </div>
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>2. Research Note <span class="page-limit">30 pages max</span></h5>
+        <p>Concise research contributions, empirical insights, or methodological discussions. Half the length of research articles but still offering distinct contributions.</p>
+        </div>
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>3. Methods Article <span class="page-limit">55 pages max</span></h5>
+        <p>Address current methodological issues or propose innovative new research methods with potential impact beyond Information Systems.</p>
+        </div>
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>4. Research Commentary <span class="page-limit">30 pages max</span></h5>
+        <p>Platform for senior scholars invited by the EIC to discuss research streams and offer insights on field advancement.</p>
+        </div>
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>5. Theory and Review <span class="page-limit">55-65 pages max</span></h5>
+        <p>A space for conceptual articles that develop novel theories and generate theoretical insights designed to advance information systems design, development, management, use, and outcomes.</p>
+        <p><strong>Two Types:</strong></p>
+        <ul style="margin-top: 8px; font-size: 0.9rem;">
+            <li><strong>Theory-Generative Research Synthesis (65 pages):</strong> Comprehensive review and synthesis of previously published research used to generate insights and implications</li>
+            <li><strong>Theory Development (55 pages):</strong> Grounding in theory and/or practice used to develop a new IS theory through new constructs, unique theory elaboration, multiple theoretical perspectives integration, or challenging existing philosophical foundations</li>
+        </ul>
+        </div>
+        <div class="category-card" onclick="selectCategory(this)">
+        <h5>6. Issues and Opinions <span class="page-limit">30 pages max</span></h5>
+        <p>A forum for fully developed and articulated position statements concerning emerging, paradoxical, or controversial research issues with rigorous arguments and scholarly evidence. Scientometric papers will be considered but must yield large theoretical contributions. Submissions should focus on a forward-looking perspective.</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Step 3: Formatting Paper -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">3</div>
+        <div class="step-name">Formatting Your Paper</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="subsection">
+        <h4>Body Text</h4>
+        <ul>
+            <li><strong>Font:</strong> Times New Roman, 12pt</li>
+            <li><strong>Spacing:</strong> Double-spaced</li>
+            <li><strong>Alignment:</strong> Left-justified only</li>
+            <li><strong>Margins:</strong> 1-inch on all sides</li>
+            <li><strong>Paper Size:</strong> Standard letter (8.5" × 11")</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>Tables &amp; Figures</h4>
+        <ul>
+            <li><strong>Font:</strong> Can use font sizes smaller than 12-point Times New Roman (e.g., 10-point Arial or Calibri)</li>
+            <li><strong>Spacing:</strong> Text within figures, tables, and exhibits may be single spaced</li>
+            <li><strong>Alignment:</strong> Must be embedded in the body of the paper, following the first reference</li>
+            <li><strong>References:</strong> Do not include if not referenced in text</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>References</h4>
+        <ul>
+            <li><strong>Font:</strong> Times New Roman, 12pt</li>
+            <li><strong>Spacing:</strong> Single-spaced with left hanging-indent</li>
+            <li><strong>Order:</strong> Alphabetical by author name</li>
+            <li><strong>Style:</strong> APA 7th edition</li>
+            <li><strong>In-text:</strong> (DeGross, 1977) or DeGross (1977)</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>Document Structure</h4>
+        <p><strong>Page 1:</strong></p>
+        <ol>
+            <li>Paper title</li>
+            <li>Abstract</li>
+            <li>Keywords (5-10 specific terms)</li>
+        </ol>
+        <p><strong>Page 2:</strong> Begin manuscript with proper heading hierarchy</p>
+        <div class="code-block">
+        <strong>Heading Format:</strong><br />
+        1 MAJOR HEAD (Bold, all caps, centered)<br />
+        1.1 First Subhead (Bold, title case, centered)<br />
+        1.1.1 Second Subhead (Bold, title case, flush left)
+        </div>
+        </div>
+        <div class="subsection">
+        <h4>Citations and Footnotes</h4>
+        <ul>
+            <li>In-text citations should follow APA 7th edition</li>
+            <li>Start with information being cited, not author name</li>
+            <li>Authors should limit the use of footnotes as they can be distracting</li>
+            <li>Include all relevant references but remain discreet when self-citing</li>
+        </ul>
+        <div class="highlight">
+        <strong>Correct:</strong> "...the Minnesota Golden Gophers basketball team was arguably the best team in the nation (Smith &amp; Jones, 1997)"<br />
+        <strong>Incorrect:</strong> "Smith and Jones (1997) argue that the Golden Gophers were the best..."
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Step 4: Submitting Paper  -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">4</div>
+        <div class="step-name">Submitting Your Paper</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="subsection">
+        <h4>Required Documents</h4>
+        <ol>
+            <li><strong>Transparency Commitment:</strong> Upload during Step 2 under Miscellaneous using provided template</li>
+            <li><strong>Anonymized Manuscript:</strong> Remove author names/affiliations from all munscript documents</li>
+        </ol>
+        </div>
+        <div class="subsection">
+        <h4>ScholarOne Submission</h4>
+        <p>All manuscripts must be submitted through MISQ's ScholarOne Manuscripts site. Registration is required separately for MISQ (different from other platforms like ICIS or Information Systems Research). Communications regarding your manuscript will take place through the ScholarOne portal.</p>
+        <div style="margin-top: 20px;">
+        <a href="https://mc.manuscriptcentral.com/misq" class="resource-button" style="background: #7A0019; color: white; border-color: #7A0019;" target="_blank" rel="noopener" onmouseover="this.style.background='white'; this.style.color='#7A0019'" onmouseout="this.style.background='#7A0019'; this.style.color='white'">
+        ScholarOne Portal
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Step 5: Review & Revision  -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">5</div>
+        <div class="step-name">Review &amp; Revision</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="subsection">
+        <h4>Review Process Overview</h4>
+        For a detailed look at MISQ's peer review process, <a href="https://misq.umn.edu/pages/review_process">visit this page.</a>
+        <div class="warning">
+        <strong>Slower Periods:</strong> Review processes may slow down during certain periods due to academic calendars.
+        </div>
+        </div>
+        <div class="subsection">
+        <h4>Revision Response Guidelines</h4>
+        <p>Authors invited to submit a revision must address feedback from editors and reviewers following these guidelines:</p>
+        <ol>
+            <li><strong>Summary of Changes:</strong> Start with succinct overview of major changes (max 2 pages)</li>
+            <li><strong>Point-by-Point Responses:</strong> Address each reviewer comment systematically. Write concisely and mention explicitly where changes were made rather than copying text segments</li>
+            <li><strong>Avoid Redundancy:</strong> Don't repeat responses if an issue was raised by multiple review team members</li>
+            <li><strong>Formatting Guidelines:</strong> Revisions must continue to adhere to manuscript guidelines, including maximum page limits.</li>
+        </ol>
+        <div class="highlight">
+        <strong>Length Guidelines:</strong> Response documents should be similar in length to the comments received. For example: 10 pages of review comments = ~20 pages total response document.
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Step 6: Templates and Resources -->
+        <div class="journey-step">
+        <div class="step-header" onclick="toggleStep(this)">
+        <div class="step-title">
+        <div class="step-number">6</div>
+        <div class="step-name">Templates and Resources</div>
+        </div>
+        <div class="step-arrow">▼</div>
+        </div>
+        <div class="step-content">
+        <div class="step-inner">
+        <div class="subsection">
+        <h4>Templates</h4>
+        <p>Download these essential templates to help with your manuscript preparation and submission:</p>
+        <div class="template-grid">
+        <a href="/DocumentLibrary/SubmissionTemplates/MISQ_Submission_Template_Word.docx" class="resource-button template-btn" download="MISQ-Manuscript-Template-Word.docx">
+        Manuscript Template (Word)
+        </a>
+        <a href="/DocumentLibrary/SubmissionTemplates/MISQ_Submission_Template_LaTeX.zip.zip" class="resource-button template-btn" download="MISQ-Manuscript-Template-LaTeX.zip">
+        Manuscript Template (LaTeX)
+        </a>
+        <a href="/DocumentLibrary/SubmissionTemplates/MISQ_Research_Transparency_Template.pdf" class="resource-button template-btn" download="MISQ-Transparency-Commitment-Template.pdf">
+        Research Transparency Commitment
+        </a>
+        </div>
+        </div>
+        <div class="subsection">
+        <h4>Online Resources</h4>
+        <p>Access these external resources to support your submission process:</p>
+        <div class="template-grid">
+        <a href="https://mc.manuscriptcentral.com/misq" class="resource-button resource-btn" target="_blank" rel="noopener">
+        MISQ ScholarOne
+        </a>
+        <a href="https://apastyle.apa.org/style-grammar-guidelines" class="resource-button resource-btn" target="_blank" rel="noopener">
+        APA 7th Edition Style Guide
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Completion Message -->
+        <div class="completion-message">
+        <h3>🎉 Complete Your MISQ Submission Journey!</h3>
+        <p>You now have all the information needed to successfully submit your manuscript to MIS Quarterly. Follow these steps carefully, and good luck with your submission!</p>
+        </div>
+        </div>
+        <script>
+        function toggleStep(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.step-arrow');
+            
+            // Toggle active state
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // Smooth scroll to section if opening
+            if (header.classList.contains('active')) {
+                setTimeout(() => {
+                    header.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        }
+
+        function selectCategory(card) {
+            // Remove selection from all cards
+            document.querySelectorAll('.category-card').forEach(c => {
+                c.classList.remove('selected');
+            });
+            
+            // Add selection to clicked card
+            card.classList.add('selected');
+        }
+
+    </script>
+    </body>
+</html>
